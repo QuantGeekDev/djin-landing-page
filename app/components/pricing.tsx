@@ -24,15 +24,15 @@ const tiers = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-32 md:py-40 px-6">
+    <section id="pricing" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="label text-muted text-center mb-6">Pricing</div>
-        <h2 className="heading-lg text-3xl md:text-4xl text-center mb-6">
+        <div className="label text-muted text-center mb-4 sm:mb-6">Pricing</div>
+        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
           Buy once. Use forever.
         </h2>
-        <p className="text-center text-muted text-[15px] mb-20">Cloud is optional.</p>
+        <p className="text-center text-muted text-[14px] sm:text-[15px] mb-12 sm:mb-20">Cloud is optional.</p>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {tiers.map((t) => (
             <div key={t.name} className={`p-6 md:p-8 flex flex-col ${t.highlight ? "bg-accent-warm/[0.03]" : "bg-background"}`}>
               {t.highlight && <div className="label text-accent-warm text-[9px] mb-4">Most Popular</div>}
@@ -51,7 +51,7 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <button className={`w-full py-2.5 rounded-lg text-[13px] font-medium transition-all duration-200 ${
+              <button className={`w-full py-3 sm:py-2.5 rounded-lg text-[13px] font-medium transition-all duration-200 ${
                 t.highlight
                   ? "bg-foreground text-background hover:bg-accent-warm hover:text-white"
                   : "border border-border text-muted hover:text-foreground hover:border-foreground/20"

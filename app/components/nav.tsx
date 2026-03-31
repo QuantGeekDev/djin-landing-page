@@ -8,7 +8,7 @@ export default function Nav() {
 
   return (
     <nav className="fixed top-10 left-0 right-0 z-50">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="frost rounded-full px-6 h-12 flex items-center justify-between">
           <Link href="/" className="label text-foreground tracking-[0.15em]">
             djin
@@ -37,7 +37,7 @@ export default function Nav() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-1 text-muted hover:text-foreground transition-colors"
+            className="md:hidden p-2.5 -mr-2 text-muted hover:text-foreground transition-colors"
             aria-label="Menu"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

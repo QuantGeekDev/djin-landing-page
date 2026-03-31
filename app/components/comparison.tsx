@@ -18,10 +18,10 @@ function Dash() {
 
 export default function Comparison() {
   return (
-    <section className="py-32 md:py-40 px-6">
+    <section className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="label text-muted text-center mb-6">Comparison</div>
-        <h2 className="heading-lg text-3xl md:text-4xl text-center mb-20">
+        <div className="label text-muted text-center mb-4 sm:mb-6">Comparison</div>
+        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
           How Djin compares
         </h2>
 

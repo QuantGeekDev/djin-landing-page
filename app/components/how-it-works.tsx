@@ -7,15 +7,15 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-32 md:py-40 px-6">
+    <section id="how-it-works" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="label text-muted text-center mb-6">Setup</div>
-        <h2 className="heading-lg text-3xl md:text-4xl text-center mb-6">
+        <div className="label text-muted text-center mb-4 sm:mb-6">Setup</div>
+        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
           30 seconds. Literally.
         </h2>
-        <p className="text-center text-muted text-[15px] mb-20">No accounts. No apps. No developer tools.</p>
+        <p className="text-center text-muted text-[14px] sm:text-[15px] mb-12 sm:mb-20">No accounts. No apps. No developer tools.</p>
 
-        <div className="grid md:grid-cols-4 gap-12 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-8">
           {steps.map((s, i) => (
             <div key={s.num} className="relative">
               {i < steps.length - 1 && (

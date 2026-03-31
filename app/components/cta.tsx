@@ -7,13 +7,13 @@ const Particles = dynamic(() => import("./particles"), { ssr: false });
 
 export default function CTA() {
   return (
-    <section className="py-32 md:py-48 px-6 relative overflow-hidden">
+    <section className="py-20 sm:py-32 md:py-48 px-5 sm:px-6 relative overflow-hidden">
       <LazyCanvas className="absolute inset-0">
         <Particles />
       </LazyCanvas>
 
       <div className="relative z-10 max-w-xl mx-auto text-center">
-        <h2 className="heading-xl text-4xl md:text-6xl mb-8">
+        <h2 className="heading-xl text-3xl sm:text-4xl md:text-6xl mb-6 sm:mb-8">
           Your AI agent
           <br />
           is waiting.

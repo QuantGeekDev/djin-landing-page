@@ -11,16 +11,16 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-32 md:py-40 px-6">
+    <section id="features" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="label text-muted text-center mb-6">Capabilities</div>
-        <h2 className="heading-lg text-3xl md:text-4xl text-center mb-20">
+        <div className="label text-muted text-center mb-4 sm:mb-6">Capabilities</div>
+        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
           Everything you need. Nothing you don&apos;t.
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {features.map((f) => (
-            <div key={f.title} className="bg-background p-6 md:p-8 group">
+            <div key={f.title} className="bg-background p-5 sm:p-6 md:p-8 group">
               <h3 className="text-[14px] font-normal mb-3 group-hover:text-accent-warm transition-colors duration-300">
                 {f.title}
               </h3>

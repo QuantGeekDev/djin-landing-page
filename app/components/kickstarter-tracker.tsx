@@ -13,7 +13,7 @@ export default function KickstarterTracker() {
   const pctFunded = Math.round((TOTAL_RAISED / GOAL) * 100);
 
   return (
-    <section id="preorder" className="py-32 md:py-40 px-6">
+    <section id="preorder" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-3xl mx-auto">
         <div className="label text-accent-warm text-center mb-6 flex items-center justify-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-accent-warm animate-pulse-soft" />
@@ -35,14 +35,14 @@ export default function KickstarterTracker() {
                 of ${GOAL.toLocaleString()} goal
               </p>
             </div>
-            <div className="flex gap-8">
+            <div className="flex gap-5 sm:gap-8">
               {[
                 { val: `${pctFunded}%`, label: "funded", color: "text-accent-warm" },
                 { val: "892", label: "backers", color: "" },
                 { val: "47", label: "days left", color: "" },
               ].map((s) => (
                 <div key={s.label} className="text-center">
-                  <p className={`text-xl font-extralight ${s.color}`}>{s.val}</p>
+                  <p className={`text-lg sm:text-xl font-extralight ${s.color}`}>{s.val}</p>
                   <p className="label text-muted/30 mt-1">{s.label}</p>
                 </div>
               ))}
@@ -58,7 +58,7 @@ export default function KickstarterTracker() {
         </div>
 
         {/* Batch cards */}
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {BATCHES.map((batch) => {
             const pct = batch.total > 0 ? Math.round((batch.sold / batch.total) * 100) : 0;
             const remaining = batch.total - batch.sold;
@@ -122,7 +122,7 @@ export default function KickstarterTracker() {
           })}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 mt-10 label text-muted/30">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 sm:mt-10 label text-muted/30">
           <span>Secure Stripe checkout</span>
           <span>Full refund guarantee</span>
           <span>Free worldwide shipping</span>

@@ -7,16 +7,16 @@ const cases = [
 
 export default function UseCases() {
   return (
-    <section className="py-32 md:py-40 px-6">
+    <section className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="label text-muted text-center mb-6">Use cases</div>
-        <h2 className="heading-lg text-3xl md:text-4xl text-center mb-20">
+        <div className="label text-muted text-center mb-4 sm:mb-6">Use cases</div>
+        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
           What can Djin do?
         </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {cases.map((c) => (
-            <div key={c.cat} className="bg-background p-6 md:p-8">
+            <div key={c.cat} className="bg-background p-5 sm:p-6 md:p-8">
               <h3 className="label text-accent-warm/60 mb-5">{c.cat}</h3>
               <ul className="space-y-3">
                 {c.items.map((item) => (

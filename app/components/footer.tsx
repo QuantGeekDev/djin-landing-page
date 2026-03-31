@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-16 px-6">
+    <footer className="border-t border-border py-12 sm:py-16 px-5 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="grid sm:grid-cols-4 gap-10 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 mb-12 sm:mb-16">
           <div>
             <p className="label text-foreground tracking-[0.15em] mb-4">djin</p>
             <p className="text-[13px] text-muted/50 leading-relaxed font-light">
