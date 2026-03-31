@@ -1,0 +1,39 @@
+export default function Footer() {
+  return (
+    <footer className="border-t border-border py-16 px-6">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-4 gap-10 mb-16">
+          <div>
+            <p className="label text-foreground tracking-[0.15em] mb-4">djin</p>
+            <p className="text-[13px] text-muted/50 leading-relaxed font-light">
+              An AI agent you can buy at the store.
+            </p>
+          </div>
+
+          {[
+            { title: "Product", links: [["Features", "#features"], ["How It Works", "#how-it-works"], ["Specs", "#specs"], ["Pricing", "#pricing"]] },
+            { title: "Resources", links: [["FAQ", "#faq"], ["GitHub", "#"], ["Discord", "#"], ["Contact", "mailto:hello@djin.ai"]] },
+            { title: "Legal", links: [["Terms", "/terms"], ["Privacy", "/privacy"], ["Refund", "/refund"]] },
+          ].map((col) => (
+            <div key={col.title}>
+              <p className="label text-muted/40 mb-4">{col.title}</p>
+              <ul className="space-y-2.5">
+                {col.links.map(([name, href]) => (
+                  <li key={name}>
+                    <a href={href} className="text-[13px] text-muted/50 hover:text-foreground transition-colors duration-200 font-light">{name}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="divider mb-8" />
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="label text-muted/20">&copy; 2026 Djin</p>
+          <p className="label text-muted/20">Made for a world beyond screens</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
