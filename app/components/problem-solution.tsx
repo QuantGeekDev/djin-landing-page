@@ -27,9 +27,9 @@ export default function ProblemSolution() {
           </div>
 
           <div>
-            <div className="label text-accent-warm/70 mb-4 sm:mb-6">With Djin</div>
+            <div className="label text-accent-warm/70 mb-4 sm:mb-6">With Jinn</div>
             <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] leading-relaxed">
-              <p>Plug it in. It turns on. Say &ldquo;Hey Djin.&rdquo;</p>
+              <p>Plug it in. It turns on. Say &ldquo;Hey Jinn.&rdquo;</p>
               <p>A real agent that reasons, plans, and takes action.</p>
               <p>5-inch display. Always-on wake word. Real-time voice.</p>
               <p>Calendar, messages, smart home &mdash; connected via plugins.</p>

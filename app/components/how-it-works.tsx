@@ -1,6 +1,6 @@
 const steps = [
   { num: "01", title: "Unbox & plug in", desc: "Take it out, plug in USB-C. It powers on and connects to WiFi." },
-  { num: "02", title: "Say hello", desc: "Say \u201CHey Djin\u201D and introduce yourself. It learns your name and routines." },
+  { num: "02", title: "Say hello", desc: "Say \u201CHey Jinn\u201D and introduce yourself. It learns your name and routines." },
   { num: "03", title: "Connect your world", desc: "Link calendar, messaging, smart home \u2014 voice or touchscreen setup." },
   { num: "04", title: "Let it work", desc: "Runs 24/7 on your counter. Manages your day. Gets smarter over time." },
 ];

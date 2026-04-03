@@ -3,7 +3,7 @@ const tiers = [
     name: "HoloBox",
     price: "$299",
     desc: "The device. Everything you need.",
-    features: ["Smart display hardware", "Pre-installed Djin agent", "Voice wake word (on-device)", "WiFi + USB-C", "Telegram, Calendar, Smart Home", "Free OTA updates", "Community support"],
+    features: ["Smart display hardware", "Pre-installed Jinn agent", "Voice wake word (on-device)", "WiFi + USB-C", "Telegram, Calendar, Smart Home", "Free OTA updates", "Community support"],
     highlight: false,
   },
   {
@@ -14,7 +14,7 @@ const tiers = [
     highlight: true,
   },
   {
-    name: "Djin Cloud",
+    name: "Jinn Cloud",
     price: "$9/mo",
     desc: "Optional. Cloud sync.",
     features: ["Cloud-hosted instance", "Access from anywhere", "Syncs with HoloBox", "Remote monitoring", "Automatic backups", "99.9% uptime SLA", "Cancel anytime"],
@@ -56,7 +56,7 @@ export default function Pricing() {
                   ? "bg-foreground text-background hover:bg-accent-warm hover:text-white"
                   : "border border-border text-muted hover:text-foreground hover:border-foreground/20"
               }`}>
-                {t.name === "Djin Cloud" ? "Join Waitlist" : "Pre-Order"}
+                {t.name === "Jinn Cloud" ? "Join Waitlist" : "Pre-Order"}
               </button>
             </div>
           ))}

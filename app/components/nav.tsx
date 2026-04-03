@@ -11,7 +11,7 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="frost rounded-full px-6 h-12 flex items-center justify-between">
           <Link href="/" className="label text-foreground tracking-[0.15em]">
-            djin
+            jinn
           </Link>
 
           <div className="hidden md:flex items-center gap-8">

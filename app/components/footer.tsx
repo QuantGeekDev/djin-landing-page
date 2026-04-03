@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 mb-12 sm:mb-16">
           <div>
-            <p className="label text-foreground tracking-[0.15em] mb-4">djin</p>
+            <p className="label text-foreground tracking-[0.15em] mb-4">jinn</p>
             <p className="text-[13px] text-muted/50 leading-relaxed font-light">
               An AI agent you can buy at the store.
             </p>
@@ -12,7 +12,7 @@ export default function Footer() {
 
           {[
             { title: "Product", links: [["Features", "#features"], ["How It Works", "#how-it-works"], ["Specs", "#specs"], ["Pricing", "#pricing"]] },
-            { title: "Resources", links: [["FAQ", "#faq"], ["GitHub", "#"], ["Discord", "#"], ["Contact", "mailto:hello@djin.ai"]] },
+            { title: "Resources", links: [["FAQ", "#faq"], ["GitHub", "#"], ["Discord", "#"], ["Contact", "mailto:hello@jinn.ai"]] },
             { title: "Legal", links: [["Terms", "/terms"], ["Privacy", "/privacy"], ["Refund", "/refund"]] },
           ].map((col) => (
             <div key={col.title}>
@@ -30,7 +30,7 @@ export default function Footer() {
 
         <div className="divider mb-8" />
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="label text-muted/20">&copy; 2026 Djin</p>
+          <p className="label text-muted/20">&copy; 2026 Jinn</p>
           <p className="label text-muted/20">Made for a world beyond screens</p>
         </div>
       </div>

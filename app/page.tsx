@@ -3,7 +3,7 @@ import Nav from "./components/nav";
 import Hero from "./components/hero";
 import ProblemSolution from "./components/problem-solution";
 import Comparison from "./components/comparison";
-import WhyDjin from "./components/why-djin";
+import WhyJinn from "./components/why-jinn";
 import Features from "./components/features";
 import HowItWorks from "./components/how-it-works";
 import UseCases from "./components/use-cases";
@@ -24,7 +24,7 @@ export default function Home() {
         <Hero />
         <ProblemSolution />
         <Comparison />
-        <WhyDjin />
+        <WhyJinn />
         <Features />
         <HowItWorks />
         <UseCases />

@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 const faqs = [
-  { q: "What is Djin?", a: "An AI agent inside the HoloBox \u2014 a smart display for your counter, desk, or nightstand. It listens for your voice, manages your day, controls your smart home, and connects to your apps." },
-  { q: "Do I need a subscription?", a: "No. Bring your own LLM API key (OpenAI, Anthropic, etc.) and pay only for usage \u2014 typically a few dollars/month. The optional Djin Cloud ($9/mo) adds remote access." },
-  { q: "How is this different from a smart speaker?", a: "Smart speakers run pre-built skills. Djin is a full AI agent \u2014 it reasons, chains actions, remembers context, drafts emails, browses the web, and controls your home in one conversation. Open source." },
-  { q: "Why not a chatbot app?", a: "Chatbot apps are text boxes on your phone. Djin is a physical device with real-time voice that takes real actions \u2014 sends messages, updates calendars, controls lights. No screen time required." },
-  { q: "Why hardware instead of cloud hosting?", a: "Cloud AI costs $20\u201380/month \u2014 $240\u2013960/year. Djin is $299 once. After a few months you\u2019ve saved money, plus your data stays local and there\u2019s no vendor lock-in." },
+  { q: "What is Jinn?", a: "An AI agent inside the HoloBox \u2014 a smart display for your counter, desk, or nightstand. It listens for your voice, manages your day, controls your smart home, and connects to your apps." },
+  { q: "Do I need a subscription?", a: "No. Bring your own LLM API key (OpenAI, Anthropic, etc.) and pay only for usage \u2014 typically a few dollars/month. The optional Jinn Cloud ($9/mo) adds remote access." },
+  { q: "How is this different from a smart speaker?", a: "Smart speakers run pre-built skills. Jinn is a full AI agent \u2014 it reasons, chains actions, remembers context, drafts emails, browses the web, and controls your home in one conversation. Open source." },
+  { q: "Why not a chatbot app?", a: "Chatbot apps are text boxes on your phone. Jinn is a physical device with real-time voice that takes real actions \u2014 sends messages, updates calendars, controls lights. No screen time required." },
+  { q: "Why hardware instead of cloud hosting?", a: "Cloud AI costs $20\u201380/month \u2014 $240\u2013960/year. Jinn is $299 once. After a few months you\u2019ve saved money, plus your data stays local and there\u2019s no vendor lock-in." },
   { q: "Is my data private?", a: "Yes. Runs on your local network. Wake word detection is on-device via NPU. Only data sent to your chosen LLM provider leaves your home." },
   { q: "Can I customize it?", a: "Fully. Open-source agent core. Write plugins, swap LLM providers, add MCP tools, modify the system prompt. If you can code, no limits. If you can\u2019t, defaults work great." },
   { q: "What LLMs are supported?", a: "OpenAI, Anthropic, Google out of the box. Any OpenAI-compatible API works, including local models via Ollama." },
