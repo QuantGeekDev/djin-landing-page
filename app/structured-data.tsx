@@ -2,21 +2,21 @@ export function OrganizationSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://jinn.ai/#organization",
+    "@id": "https://get.jinn.today/#organization",
     name: "Jinn",
-    url: "https://jinn.ai",
+    url: "https://get.jinn.today",
     logo: {
       "@type": "ImageObject",
-      url: "https://jinn.ai/logo.png",
+      url: "https://get.jinn.today/logo.png",
     },
     sameAs: [
       "https://github.com/QuantGeekDev",
-      "mailto:hello@jinn.ai",
+      "mailto:hello@get.jinn.today",
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
-      email: "hello@jinn.ai",
+      email: "hello@get.jinn.today",
     },
   };
 
@@ -42,7 +42,7 @@ export function ProductSchema() {
     category: "Smart Home > Smart Displays",
     offers: {
       "@type": "Offer",
-      url: "https://jinn.ai/#pricing",
+      url: "https://get.jinn.today/#pricing",
       priceCurrency: "USD",
       price: "299.00",
       availability: "https://schema.org/PreOrder",
@@ -99,7 +99,7 @@ export function WebSiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Jinn",
-    url: "https://jinn.ai",
+    url: "https://get.jinn.today",
     description: "Jinn HoloBox \u2014 an AI assistant that lives in your home.",
   };
 

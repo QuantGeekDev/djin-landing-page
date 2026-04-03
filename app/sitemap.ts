@@ -3,7 +3,7 @@ import { posts } from "./blog/posts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogEntries = posts.map((post) => ({
-    url: `https://jinn.ai/blog/${post.slug}`,
+    url: `https://get.jinn.today/blog/${post.slug}`,
     lastModified: new Date(post.updatedAt || post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -11,13 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://jinn.ai",
+      url: "https://get.jinn.today",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: "https://jinn.ai/blog",
+      url: "https://get.jinn.today/blog",
       lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.8,

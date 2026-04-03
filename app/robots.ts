@@ -29,6 +29,9 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://jinn.ai/sitemap.xml",
+    sitemap: "https://get.jinn.today/sitemap.xml",
+    host: "https://get.jinn.today",
   };
 }
+
+// Note: llms.txt is served as a static file from public/llms.txt at https://get.jinn.today/llms.txt

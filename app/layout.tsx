@@ -21,7 +21,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jinn.ai"),
+  metadataBase: new URL("https://get.jinn.today"),
   title: {
     default: "Jinn \u2014 An AI Assistant That Lives in Your Home",
     template: "%s | Jinn",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     "open source AI assistant",
     "smart display 2026",
   ],
-  authors: [{ name: "Jinn", url: "https://jinn.ai" }],
+  authors: [{ name: "Jinn", url: "https://get.jinn.today" }],
   creator: "Jinn",
   publisher: "Jinn",
   robots: {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jinn.ai",
+    url: "https://get.jinn.today",
     siteName: "Jinn",
     title: "Jinn \u2014 An AI Assistant That Lives in Your Home",
     description:
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://jinn.ai",
+    canonical: "https://get.jinn.today",
   },
   other: {
     "theme-color": "#000000",

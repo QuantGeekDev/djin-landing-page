@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Guides, comparisons, and insights about AI agents, smart home automation, and the Jinn HoloBox smart display.",
   alternates: {
-    canonical: "https://jinn.ai/blog",
+    canonical: "https://get.jinn.today/blog",
   },
 };
 

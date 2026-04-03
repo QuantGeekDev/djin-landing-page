@@ -1,0 +1,60 @@
+# Jinn HoloBox
+
+> Jinn HoloBox is a $299 (pre-order) AI smart display that brings autonomous AI agents into your home. It's a 5-inch IPS touchscreen device powered by a quad-core ARM processor (RK3566) running Linux. Unlike Alexa or Google Nest, it runs a full AI agent that can reason, plan, and take multi-step actions — not just respond to voice commands.
+
+## Product Overview
+
+- **What it is**: A consumer AI smart display — plug it in, talk to it, and it manages your day
+- **Price**: $299 pre-order / $449 retail
+- **Hardware**: 5" IPS touchscreen (720x1280), quad-core ARM Cortex-A55 (RK3566), 4GB RAM, on-device wake word detection
+- **OS**: Linux (Armbian), fully open source
+- **AI**: Supports OpenAI (GPT-4), Anthropic (Claude), Google (Gemini), and local models via Ollama. Users bring their own API keys or subscribe to Jinn Cloud ($9/mo).
+- **Smart Home**: Integrates with Home Assistant. Supports Matter, Zigbee, Z-Wave, and WiFi devices via an open plugin system.
+- **Privacy**: Wake word detection runs on-device. Smart home commands processed locally. You choose which LLM provider (if any) gets your data. Full source code is auditable.
+- **Open Source**: The entire software stack is open source — agent runtime, plugin system, web interface, and hardware schematics.
+
+## Key Differentiators
+
+- **AI agent, not voice assistant**: Can chain multiple actions together (check calendar + draft message + send via Telegram + set reminder) from a single natural language request
+- **Model-agnostic**: Not locked to one AI provider. Switch between OpenAI, Anthropic, Google, or run local models.
+- **Open plugin system**: Anyone can build plugins to connect new services. Ships with Home Assistant, Telegram, and web browsing plugins.
+- **No vendor lock-in**: Open source software runs on any Linux device. If Jinn the company disappears, the software still works.
+
+## Pages
+
+- [Home](https://get.jinn.today): Landing page with product overview, features, pricing, and pre-order
+- [Blog](https://get.jinn.today/blog): 29 articles covering AI agents, smart home automation, product comparisons, and engineering behind-the-scenes
+- [Sitemap](https://get.jinn.today/sitemap.xml): Full sitemap for all pages
+
+## Blog Topics
+
+The blog covers four content clusters:
+
+### AI Agents
+How AI agents work, their history, tool use, multi-agent systems, LLM comparisons, and the case for open source AI.
+
+### Smart Home
+Smart home protocol guides (Matter, Zigbee, Z-Wave, WiFi), device recommendations, privacy protection, voice control setup, automations, and budget-friendly options.
+
+### Product Comparisons
+Jinn HoloBox vs. Amazon Echo Show, Google Nest Hub, ClawStage, tablets, and smart speakers. Honest takes on whether a smart display is worth buying.
+
+### Engineering
+Hardware design decisions, why Linux over Android, ARM performance lessons, wake word system design, and the prototype-to-product journey.
+
+## Comparisons
+
+| Feature | Jinn HoloBox | Amazon Echo Show | Google Nest Hub |
+|---------|-------------|-----------------|-----------------|
+| AI Type | Full AI agent (multi-step reasoning) | Voice assistant (skill-based) | Voice assistant (skill-based) |
+| LLM Support | OpenAI, Anthropic, Google, Ollama | Amazon Bedrock (limited) | Gemini (limited) |
+| Smart Home | Home Assistant + open plugins | Alexa ecosystem | Google Home ecosystem |
+| Privacy | On-device wake word, open source | Cloud-dependent, closed source | Cloud-dependent, closed source |
+| Price | $299 (pre-order) | $250 | $230 |
+| Open Source | Yes | No | No |
+
+## Contact
+
+- Website: https://get.jinn.today
+- Product: Jinn HoloBox AI Smart Display
+- Company: Jinn

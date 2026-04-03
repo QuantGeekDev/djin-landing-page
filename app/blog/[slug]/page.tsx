@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
     },
     alternates: {
-      canonical: `https://jinn.ai/blog/${post.slug}`,
+      canonical: `https://get.jinn.today/blog/${post.slug}`,
     },
   };
 }
@@ -51,16 +51,16 @@ function ArticleSchema({ post }: { post: (typeof posts)[0] }) {
     author: {
       "@type": "Organization",
       name: post.author,
-      url: "https://jinn.ai",
+      url: "https://get.jinn.today",
     },
     publisher: {
       "@type": "Organization",
       name: "Jinn",
-      url: "https://jinn.ai",
+      url: "https://get.jinn.today",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://jinn.ai/blog/${post.slug}`,
+      "@id": `https://get.jinn.today/blog/${post.slug}`,
     },
     keywords: post.tags.join(", "),
   };

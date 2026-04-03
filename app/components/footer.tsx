@@ -12,7 +12,7 @@ export default function Footer() {
 
           {[
             { title: "Product", links: [["Features", "#features"], ["How It Works", "#how-it-works"], ["Specs", "#specs"], ["Pricing", "#pricing"]] },
-            { title: "Resources", links: [["Blog", "/blog"], ["FAQ", "#faq"], ["GitHub", "#"], ["Discord", "#"], ["Contact", "mailto:hello@jinn.ai"]] },
+            { title: "Resources", links: [["Blog", "/blog"], ["FAQ", "#faq"], ["GitHub", "#"], ["Discord", "#"], ["Contact", "mailto:hello@get.jinn.today"]] },
             { title: "Legal", links: [["Terms", "/terms"], ["Privacy", "/privacy"], ["Refund", "/refund"]] },
           ].map((col) => (
             <div key={col.title}>
