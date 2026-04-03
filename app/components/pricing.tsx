@@ -25,8 +25,8 @@ const tiers = [
     price: "$9/mo",
     originalPrice: null,
     period: "subscription",
-    sub: "Alternative to bringing your own API keys",
-    desc: "We handle the AI infrastructure so you don\u2019t have to.",
+    sub: "Optional — or bring your own API keys for free",
+    desc: "Don\u2019t want to manage API keys? We\u2019ll handle the AI infrastructure for you.",
     features: [
       "Managed AI — no API keys needed",
       "Access your Jinn from anywhere",
