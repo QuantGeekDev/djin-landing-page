@@ -12,10 +12,12 @@ import Pricing from "./components/pricing";
 import FAQ from "./components/faq";
 import CTA from "./components/cta";
 import Footer from "./components/footer";
+import { ProductSchema } from "./structured-data";
 
 export default function Home() {
   return (
     <>
+      <ProductSchema />
       <WaitlistBanner />
       <Nav />
       <main>

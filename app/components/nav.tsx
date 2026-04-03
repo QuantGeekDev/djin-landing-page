@@ -24,6 +24,12 @@ export default function Nav() {
                 {item}
               </Link>
             ))}
+            <Link
+              href="/blog"
+              className="text-[13px] text-muted hover:text-foreground transition-colors duration-200"
+            >
+              Blog
+            </Link>
           </div>
 
           <div className="hidden md:block">
@@ -58,6 +64,13 @@ export default function Nav() {
                 {item}
               </Link>
             ))}
+            <Link
+              href="/blog"
+              onClick={() => setOpen(false)}
+              className="block text-sm text-muted hover:text-foreground transition-colors"
+            >
+              Blog
+            </Link>
             <a
               href="#preorder"
               onClick={() => setOpen(false)}
