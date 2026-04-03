@@ -44,7 +44,7 @@ export default function Hero() {
         </div>
 
         <p className="text-[13px] text-muted/60 font-light mb-14 sm:mb-20">
-          That&apos;s less than $0.82/day. Plans start at $9/mo.
+          $449 retail &mdash; pre-order now and save $150. Bring your own API keys or add Jinn Cloud.
         </p>
 
         {/* Device mockup with orb */}

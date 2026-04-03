@@ -19,10 +19,10 @@ export default function CTA() {
           is waiting.
         </h2>
         <p className="text-muted text-[15px] mb-4 font-light">
-          $299 for the device. Plans from $9/mo. 60-day money-back guarantee.
+          Pre-order for $299 &mdash; $150 off the $449 retail price.
         </p>
         <p className="text-muted/50 text-[13px] mb-12 font-light">
-          That&apos;s less than $0.82/day for an AI that manages your life.
+          60-day money-back guarantee. Bring your own API keys or add Jinn Cloud ($9/mo).
         </p>
         <a
           href="#preorder"

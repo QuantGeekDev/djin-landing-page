@@ -18,7 +18,7 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Jinn — An AI Assistant That Lives in Your Home",
   description:
-    "Meet the HoloBox: a personal AI agent in a smart display. Plug it in, talk to it, and let it manage your day. $299 for the device, plans from $9/mo.",
+    "Meet the HoloBox: a personal AI agent in a smart display. Plug it in, talk to it, and let it manage your day. Pre-order now for $299 ($150 off retail).",
   openGraph: {
     title: "Jinn — An AI Assistant That Lives in Your Home",
     description:

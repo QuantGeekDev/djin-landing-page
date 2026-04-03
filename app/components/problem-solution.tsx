@@ -39,8 +39,8 @@ export default function ProblemSolution() {
               <p>A real agent that reasons, plans, and takes action.</p>
               <p>5-inch display. Always-on wake word. Real-time voice.</p>
               <p>Calendar, messages, smart home &mdash; connected via plugins.</p>
-              <p>Your hardware, your network. Cancel the plan &mdash; the device is still yours.</p>
-              <p>Simple subscription. No lock-in. No surprises.</p>
+              <p>Your hardware, your network. Bring your own API keys, or let Jinn Cloud handle it.</p>
+              <p>$299 pre-order. $449 retail. The device is yours forever.</p>
               <p className="text-foreground font-normal pt-2">
                 The AI assistant that finally exists in the real world.
               </p>
