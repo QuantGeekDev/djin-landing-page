@@ -6,7 +6,7 @@ export default function Footer() {
           <div>
             <p className="label text-foreground tracking-[0.15em] mb-4">jinn</p>
             <p className="text-[13px] text-muted/50 leading-relaxed font-light">
-              An AI agent you can buy at the store.
+              An AI assistant that lives in your home.
             </p>
           </div>
 

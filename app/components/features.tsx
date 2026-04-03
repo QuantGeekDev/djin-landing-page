@@ -1,12 +1,12 @@
 const features = [
-  { title: "Voice-first", desc: "Wake word detection, natural conversation, real-time speech. Talk to it like a person." },
-  { title: "Smart display", desc: "5-inch touchscreen. Calendar, weather, messages, and an avatar that talks back." },
-  { title: "Plugin ecosystem", desc: "Telegram, Twilio, smart home, calendar. Open plugin system for anything." },
-  { title: "Private by design", desc: "Runs locally on your network. Your data stays home unless you say otherwise." },
-  { title: "Always on", desc: "Always listening for your wake word. No boot time. It\u2019s just there." },
-  { title: "Multi-agent", desc: "Spawn sub-agents for complex tasks. Research, plan, and execute in parallel." },
-  { title: "Proactive", desc: "Reminds you, alerts you, takes action on schedules you define." },
-  { title: "Open source brain", desc: "Swap LLM providers, customize behavior, extend everything. You own the stack." },
+  { title: "Voice-first", desc: "Say \u201CHey Jinn\u201D and just talk. It listens, understands context, and responds in real time \u2014 like a conversation, not a command." },
+  { title: "Smart display", desc: "Glance at your calendar, check the weather, read a message \u2014 all on the 5-inch display. Or just ask out loud." },
+  { title: "Plugin ecosystem", desc: "Telegram, Twilio, smart home, calendar \u2014 all connected out of the box. Build your own plugins or install community ones." },
+  { title: "Private by design", desc: "Your data stays on your network. Wake word runs on-device. Only what you choose leaves your home." },
+  { title: "Always on", desc: "Walk into the room and it\u2019s ready. No boot screen, no loading. Your AI is always one sentence away." },
+  { title: "Multi-agent", desc: "Hand off complex tasks to sub-agents that research, plan, and execute in parallel \u2014 while you do something else." },
+  { title: "Proactive", desc: "It doesn\u2019t wait for you to ask. Reminders, alerts, and scheduled actions happen on your terms." },
+  { title: "Open source", desc: "Swap LLM providers, write plugins, modify the system prompt. You see every line of code that runs on your device." },
 ];
 
 export default function Features() {
@@ -15,7 +15,7 @@ export default function Features() {
       <div className="max-w-5xl mx-auto">
         <div className="label text-muted text-center mb-4 sm:mb-6">Capabilities</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
-          Everything you need. Nothing you don&apos;t.
+          One device. Everything handled.
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">

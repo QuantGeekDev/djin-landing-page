@@ -1,13 +1,13 @@
 const categories = [
-  { name: "Smart Speakers", sub: "Voice assistants in a speaker", v: [1,0,0,0,0,0,1] },
+  { name: "Smart Speakers", sub: "Voice assistants in a speaker", v: [1,0,0,0,0,0,0] },
   { name: "Chat Apps", sub: "AI chatbots via messaging", v: [0,0,0,1,0,0,0] },
   { name: "Cloud Hosting", sub: "Managed AI in the cloud", v: [0,0,1,1,0,0,0] },
   { name: "Desktop Bots", sub: "Hardware that automates your PC", v: [0,0,1,0,1,0,0] },
-  { name: "Companion Robots", sub: "Animated pet robots", v: [1,0,0,0,0,0,1] },
+  { name: "Companion Robots", sub: "Animated pet robots", v: [1,0,0,0,0,0,0] },
   { name: "Jinn HoloBox", sub: "AI agent in a smart display", v: [1,1,1,1,1,1,1] },
 ];
 
-const cols = ["Voice", "Display", "AI Agent", "Plugins", "Local", "Open Source", "No Sub"];
+const cols = ["Voice", "Display", "AI Agent", "Plugins", "Local", "Open Source", "Own Hardware"];
 
 function Check() {
   return <span className="text-accent-warm text-sm">&#10003;</span>;
@@ -22,7 +22,7 @@ export default function Comparison() {
       <div className="max-w-4xl mx-auto">
         <div className="label text-muted text-center mb-4 sm:mb-6">Comparison</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
-          How Jinn compares
+          Jinn does what nothing else can
         </h2>
 
         <div className="hidden md:block overflow-hidden rounded-2xl border border-border">

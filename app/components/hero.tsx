@@ -18,17 +18,17 @@ export default function Hero() {
         </div>
 
         <h1 className="heading-xl text-[2.5rem] sm:text-5xl md:text-[5.5rem] lg:text-[6.5rem] mb-6 sm:mb-8 max-w-4xl mx-auto">
-          An AI agent you can
+          An AI assistant that
           <br />
-          <span className="gradient-text">buy at the store</span>
+          <span className="gradient-text">lives in your home</span>
         </h1>
 
-        <p className="body-lg text-muted text-base sm:text-lg md:text-xl max-w-xl mx-auto mb-10 sm:mb-14">
-          A personal AI in a smart display. Plug it in, talk to it,
-          let it handle the rest.
+        <p className="body-lg text-muted text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 sm:mb-14">
+          Plug it in. Say hello. It manages your calendar, controls your home,
+          and drafts your messages &mdash; from a 5&#8209;inch display on your counter.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-14 sm:mb-20 px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8 px-4 sm:px-0">
           <a
             href="#preorder"
             className="px-8 py-3.5 rounded-full bg-foreground text-background font-medium text-[15px] hover:bg-accent-warm hover:text-white transition-all duration-300 text-center"
@@ -42,6 +42,10 @@ export default function Hero() {
             See How It Works
           </a>
         </div>
+
+        <p className="text-[13px] text-muted/60 font-light mb-14 sm:mb-20">
+          That&apos;s less than $0.82/day. Plans start at $9/mo.
+        </p>
 
         {/* Device mockup with orb */}
         <div className="relative mx-auto max-w-[260px] sm:max-w-[320px]">

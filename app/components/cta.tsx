@@ -14,12 +14,15 @@ export default function CTA() {
 
       <div className="relative z-10 max-w-xl mx-auto text-center">
         <h2 className="heading-xl text-3xl sm:text-4xl md:text-6xl mb-6 sm:mb-8">
-          Your AI agent
+          Your AI assistant
           <br />
           is waiting.
         </h2>
-        <p className="text-muted text-[15px] mb-12 font-light">
-          Be one of the first to own a personal AI agent.
+        <p className="text-muted text-[15px] mb-4 font-light">
+          $299 for the device. Plans from $9/mo. 60-day money-back guarantee.
+        </p>
+        <p className="text-muted/50 text-[13px] mb-12 font-light">
+          That&apos;s less than $0.82/day for an AI that manages your life.
         </p>
         <a
           href="#preorder"

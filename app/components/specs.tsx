@@ -19,9 +19,9 @@ export default function Specs() {
       <div className="max-w-3xl mx-auto">
         <div className="label text-muted text-center mb-4 sm:mb-6">Hardware</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
-          Built to sit on your counter
+          Real hardware, not a rebranded tablet
         </h2>
-        <p className="text-center text-muted text-[14px] sm:text-[15px] mb-12 sm:mb-20">Real hardware. Real specs. Not a rebranded tablet.</p>
+        <p className="text-center text-muted text-[14px] sm:text-[15px] mb-12 sm:mb-20">Built to sit on your counter and run 24/7.</p>
 
         <div className="rounded-2xl border border-border overflow-hidden">
           {specs.map((s, i) => (

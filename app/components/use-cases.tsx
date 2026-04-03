@@ -11,7 +11,7 @@ export default function UseCases() {
       <div className="max-w-5xl mx-auto">
         <div className="label text-muted text-center mb-4 sm:mb-6">Use cases</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
-          What can Jinn do?
+          What will you ask Jinn first?
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">

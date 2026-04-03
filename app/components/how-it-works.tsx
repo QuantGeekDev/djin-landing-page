@@ -1,8 +1,8 @@
 const steps = [
-  { num: "01", title: "Unbox & plug in", desc: "Take it out, plug in USB-C. It powers on and connects to WiFi." },
-  { num: "02", title: "Say hello", desc: "Say \u201CHey Jinn\u201D and introduce yourself. It learns your name and routines." },
-  { num: "03", title: "Connect your world", desc: "Link calendar, messaging, smart home \u2014 voice or touchscreen setup." },
-  { num: "04", title: "Let it work", desc: "Runs 24/7 on your counter. Manages your day. Gets smarter over time." },
+  { num: "01", title: "Unbox & plug in", desc: "Take it out, plug in USB-C. It powers on and connects to your WiFi." },
+  { num: "02", title: "Say hello", desc: "Say \u201CHey Jinn\u201D and introduce yourself. Your first conversation starts in seconds." },
+  { num: "03", title: "Connect your world", desc: "Link calendar, messaging, smart home \u2014 voice or touchscreen. Add integrations whenever you\u2019re ready." },
+  { num: "04", title: "Let it work", desc: "Runs 24/7 on your counter. Manages your day. Gets better the more you use it." },
 ];
 
 export default function HowItWorks() {
@@ -11,7 +11,7 @@ export default function HowItWorks() {
       <div className="max-w-4xl mx-auto">
         <div className="label text-muted text-center mb-4 sm:mb-6">Setup</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
-          30 seconds. Literally.
+          Unbox to &ldquo;Hey Jinn&rdquo; in 30 seconds
         </h2>
         <p className="text-center text-muted text-[14px] sm:text-[15px] mb-12 sm:mb-20">No accounts. No apps. No developer tools.</p>
 
