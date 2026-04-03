@@ -4,15 +4,15 @@ export default function ProblemSolution() {
       <div className="max-w-5xl mx-auto">
         <div className="label text-muted text-center mb-4 sm:mb-6">The problem</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-5xl text-center mb-6 max-w-3xl mx-auto">
-          You&apos;re paying for AI
+          AI is everywhere.
           <br />
-          <span className="text-muted">you don&apos;t own.</span>
+          <span className="text-muted">But it doesn&apos;t live anywhere.</span>
         </h2>
 
         <p className="text-center text-muted text-[14px] sm:text-[15px] max-w-xl mx-auto mb-10 sm:mb-14 leading-relaxed">
-          $20/month for ChatGPT. $10/month for a smart speaker subscription. $80/month to self-host.
-          That&apos;s $240&ndash;960/year &mdash; and they can raise prices, change features, or shut down whenever they want.
-          What do you actually own? Nothing.
+          It&apos;s trapped in chat windows, phone apps, and cloud dashboards.
+          You open a tab, type a prompt, copy the answer, close the tab. Repeat.
+          There&apos;s no presence, no continuity, no device that just handles things for you.
         </p>
 
         <div className="divider max-w-16 sm:max-w-24 mx-auto my-10 sm:my-16" />
@@ -27,7 +27,7 @@ export default function ProblemSolution() {
               <p>Self-host an AI framework &mdash; if you know Docker.</p>
               <p>Pay for cloud hosting. Forever. And hope they don&apos;t shut down.</p>
               <p className="text-accent-warm/80 pt-2">
-                Nothing gives you real AI in a device you actually own.
+                AI has no home. Until now.
               </p>
             </div>
           </div>
