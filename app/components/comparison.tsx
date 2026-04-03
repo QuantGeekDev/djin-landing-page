@@ -13,7 +13,7 @@ function Check() {
   return <span className="text-accent-warm text-sm">&#10003;</span>;
 }
 function Dash() {
-  return <span className="text-muted/20 text-sm">&mdash;</span>;
+  return <span className="text-muted/50 text-sm">&mdash;</span>;
 }
 
 export default function Comparison() {
@@ -29,9 +29,9 @@ export default function Comparison() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left px-6 py-4 font-light text-muted/60 text-xs w-52" />
+                <th className="text-left px-6 py-4 font-light text-muted/80 text-xs w-52" />
                 {cols.map(c => (
-                  <th key={c} className="px-3 py-4 label text-muted/40 text-center text-[10px]">{c}</th>
+                  <th key={c} className="px-3 py-4 label text-muted/70 text-center">{c}</th>
                 ))}
               </tr>
             </thead>
@@ -42,7 +42,7 @@ export default function Comparison() {
                   <tr key={cat.name} className={`border-b border-border last:border-0 ${isJinn ? "bg-accent-warm/[0.03]" : ""}`}>
                     <td className="px-6 py-5">
                       <p className={`text-[14px] ${isJinn ? "text-accent-warm font-normal" : "font-light"}`}>{cat.name}</p>
-                      <p className="text-[11px] text-muted/40 mt-0.5">{cat.sub}</p>
+                      <p className="text-[12px] text-muted/70 mt-0.5">{cat.sub}</p>
                     </td>
                     {cat.v.map((val, i) => (
                       <td key={i} className="px-3 py-5 text-center">{val ? <Check /> : <Dash />}</td>
@@ -64,9 +64,9 @@ export default function Comparison() {
                 <div className="flex justify-between items-center">
                   <div>
                     <p className={`text-sm ${isJinn ? "text-accent-warm" : ""}`}>{cat.name}</p>
-                    <p className="text-[11px] text-muted/40">{cat.sub}</p>
+                    <p className="text-[12px] text-muted/70">{cat.sub}</p>
                   </div>
-                  <span className={`font-mono text-sm ${isJinn ? "text-accent-warm" : "text-muted/40"}`}>{count}/7</span>
+                  <span className={`font-mono text-sm ${isJinn ? "text-accent-warm" : "text-muted/70"}`}>{count}/7</span>
                 </div>
                 <div className="flex gap-1 mt-3">
                   {cat.v.map((val, i) => (

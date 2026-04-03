@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/app/lib/analytics";
 
 export default function WaitlistBanner() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ export default function WaitlistBanner() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
+    trackEvent("waitlist_signup", { location: "banner" });
     setSubmitted(true);
   };
 

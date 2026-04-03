@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/app/lib/analytics";
 
 const faqs = [
   { q: "What is Jinn?", a: "An AI agent inside the HoloBox \u2014 a smart display for your counter, desk, or nightstand. It listens for your voice, manages your day, controls your smart home, and connects to your apps." },
@@ -54,6 +55,7 @@ export default function FAQ() {
         <div className="flex justify-center mt-10 sm:mt-12">
           <a
             href="#preorder"
+            onClick={() => trackEvent("preorder_click", { location: "faq" })}
             className="px-8 py-3 rounded-full bg-foreground text-background font-medium text-[13px] hover:bg-accent-warm hover:text-white transition-all duration-200"
           >
             Pre-Order for $299 &mdash; Save $150

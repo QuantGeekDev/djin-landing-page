@@ -17,10 +17,10 @@ export default function UseCases() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
           {cases.map((c) => (
             <div key={c.cat} className="bg-background p-5 sm:p-6 md:p-8">
-              <h3 className="label text-accent-warm/60 mb-5">{c.cat}</h3>
+              <h3 className="label text-accent-warm/80 mb-5">{c.cat}</h3>
               <ul className="space-y-3">
                 {c.items.map((item) => (
-                  <li key={item} className="text-[13px] text-muted leading-relaxed font-light">{item}</li>
+                  <li key={item} className="text-[14px] text-muted leading-relaxed font-normal">{item}</li>
                 ))}
               </ul>
             </div>

@@ -24,7 +24,7 @@ export default function Features() {
               <h3 className="text-[14px] font-normal mb-3 group-hover:text-accent-warm transition-colors duration-300">
                 {f.title}
               </h3>
-              <p className="text-[13px] text-muted leading-relaxed font-light">{f.desc}</p>
+              <p className="text-[14px] text-muted leading-relaxed font-normal">{f.desc}</p>
             </div>
           ))}
         </div>

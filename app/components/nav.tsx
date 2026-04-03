@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/app/lib/analytics";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -35,6 +36,7 @@ export default function Nav() {
           <div className="hidden md:block">
             <a
               href="#preorder"
+              onClick={() => trackEvent("preorder_click", { location: "nav" })}
               className="text-[13px] font-medium text-background bg-foreground hover:bg-accent-warm hover:text-white px-5 py-2 rounded-full transition-all duration-200"
             >
               Pre-Order
@@ -73,7 +75,7 @@ export default function Nav() {
             </Link>
             <a
               href="#preorder"
-              onClick={() => setOpen(false)}
+              onClick={() => { trackEvent("preorder_click", { location: "nav_mobile" }); setOpen(false); }}
               className="block text-center text-sm font-medium text-background bg-foreground px-5 py-2.5 rounded-full"
             >
               Pre-Order

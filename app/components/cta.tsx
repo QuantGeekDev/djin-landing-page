@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import LazyCanvas from "./lazy-canvas";
+import { trackEvent } from "@/app/lib/analytics";
 
 const Particles = dynamic(() => import("./particles"), { ssr: false });
 
@@ -26,6 +27,7 @@ export default function CTA() {
         </p>
         <a
           href="#preorder"
+          onClick={() => trackEvent("preorder_click", { location: "cta" })}
           className="inline-block px-10 py-3.5 rounded-full bg-foreground text-background font-medium text-[15px] hover:bg-accent-warm hover:text-white transition-all duration-300"
         >
           Pre-Order Now

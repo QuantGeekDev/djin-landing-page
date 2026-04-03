@@ -1,5 +1,7 @@
 "use client";
 
+import { trackEvent } from "@/app/lib/analytics";
+
 const BATCHES = [
   { name: "Batch 1", total: 500, sold: 500, status: "sold-out" as const, price: "$249", label: "Early Bird" },
   { name: "Batch 2", total: 800, sold: 392, status: "active" as const, price: "$299", label: "Pre-Order" },
@@ -108,7 +110,10 @@ export default function KickstarterTracker() {
                 </p>
 
                 {isActive ? (
-                  <button className="w-full py-2.5 rounded-lg bg-foreground text-background text-[13px] font-medium hover:bg-accent-warm hover:text-white transition-all duration-200 flex items-center justify-center gap-2">
+                  <button
+                    onClick={() => trackEvent("preorder_click", { location: "batch_tracker", batch: batch.name, price: batch.price })}
+                    className="w-full py-2.5 rounded-lg bg-foreground text-background text-[13px] font-medium hover:bg-accent-warm hover:text-white transition-all duration-200 flex items-center justify-center gap-2"
+                  >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
                     Pre-Order with Stripe
                   </button>

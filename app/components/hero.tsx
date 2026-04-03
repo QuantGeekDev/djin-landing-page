@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { trackEvent } from "@/app/lib/analytics";
 
 const Aurora = dynamic(() => import("./aurora"), { ssr: false });
 const Orb = dynamic(() => import("./orb"), { ssr: false });
@@ -23,7 +24,7 @@ export default function Hero() {
           <span className="gradient-text">lives in your home</span>
         </h1>
 
-        <p className="body-lg text-muted text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 sm:mb-14">
+        <p className="body-lg text-muted text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 sm:mb-14 font-normal">
           Plug it in. Say hello. It manages your calendar, controls your home,
           and drafts your messages &mdash; from a 5&#8209;inch display on your counter.
         </p>
@@ -31,19 +32,20 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8 px-4 sm:px-0">
           <a
             href="#preorder"
+            onClick={() => trackEvent("preorder_click", { location: "hero" })}
             className="px-8 py-3.5 rounded-full bg-foreground text-background font-medium text-[15px] hover:bg-accent-warm hover:text-white transition-all duration-300 text-center"
           >
             Pre-Order &mdash; $299
           </a>
           <a
             href="#how-it-works"
-            className="px-8 py-3.5 rounded-full border border-border text-muted hover:text-foreground hover:border-foreground/20 font-light text-[15px] transition-all duration-300 text-center"
+            className="px-8 py-3.5 rounded-full border border-border text-muted hover:text-foreground hover:border-foreground/20 font-normal text-[15px] transition-all duration-300 text-center"
           >
             See How It Works
           </a>
         </div>
 
-        <p className="text-[13px] text-muted/60 font-light mb-14 sm:mb-20">
+        <p className="text-[13px] text-muted/80 font-light mb-14 sm:mb-20">
           $449 retail &mdash; pre-order now and save $150. Bring your own API keys or add Jinn Cloud.
         </p>
 
@@ -51,11 +53,11 @@ export default function Hero() {
         <div className="relative mx-auto max-w-[260px] sm:max-w-[320px]">
           <div className="aspect-[3/4.5] rounded-[2rem] bg-surface border border-border overflow-hidden glow-warm">
             <div className="h-full flex flex-col p-5">
-              <div className="flex items-center justify-between text-[11px] font-mono text-muted/60 mb-6 sm:mb-8">
+              <div className="flex items-center justify-between text-[11px] font-mono text-muted/80 mb-6 sm:mb-8">
                 <span>9:41</span>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500/80" />
-                  <span className="text-green-500/80">online</span>
+                  <span className="text-green-400/90">online</span>
                 </div>
               </div>
 
@@ -91,7 +93,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="label text-muted/50 mt-12">
+        <p className="label text-muted/70 mt-12">
           Ships summer 2026 &middot; Free worldwide shipping
         </p>
       </div>

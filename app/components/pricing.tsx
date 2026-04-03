@@ -1,3 +1,7 @@
+"use client";
+
+import { trackEvent } from "@/app/lib/analytics";
+
 const tiers = [
   {
     name: "HoloBox",
@@ -77,11 +81,19 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <button className={`w-full py-3 sm:py-2.5 rounded-lg text-[13px] font-medium transition-all duration-200 ${
-                t.highlight
-                  ? "bg-foreground text-background hover:bg-accent-warm hover:text-white"
-                  : "border border-border text-muted hover:text-foreground hover:border-foreground/20"
-              }`}>
+              <button
+                onClick={() =>
+                  trackEvent(
+                    t.highlight ? "preorder_click" : "waitlist_signup",
+                    { location: "pricing", tier: t.name },
+                  )
+                }
+                className={`w-full py-3 sm:py-2.5 rounded-lg text-[13px] font-medium transition-all duration-200 ${
+                  t.highlight
+                    ? "bg-foreground text-background hover:bg-accent-warm hover:text-white"
+                    : "border border-border text-muted hover:text-foreground hover:border-foreground/20"
+                }`}
+              >
                 {t.highlight ? "Pre-Order for $299" : "Join Waitlist"}
               </button>
             </div>

@@ -8,7 +8,7 @@
   --surface: #0a0a0a;
   --surface-2: #111111;
   --border: rgba(255, 255, 255, 0.08);
-  --muted: #6b6b6b;
+  --muted: #999;
   --frost: rgba(255, 255, 255, 0.04);
   --frost-strong: rgba(255, 255, 255, 0.08);
 }
@@ -91,7 +91,7 @@ body {
 
 .label {
   font-family: var(--font-mono, ui-monospace, monospace);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -99,7 +99,7 @@ body {
 
 @media (min-width: 640px) {
   .label {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 

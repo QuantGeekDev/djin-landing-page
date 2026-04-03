@@ -19,21 +19,21 @@ export default function ProblemSolution() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
           <div>
-            <div className="label text-muted/50 mb-4 sm:mb-6">The status quo</div>
-            <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] text-muted leading-relaxed">
+            <div className="label text-muted/70 mb-4 sm:mb-6">The status quo</div>
+            <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] text-muted leading-relaxed font-normal">
               <p>Pay $20/mo for a chatbot that forgets you exist.</p>
               <p>Buy a smart speaker that can&apos;t think past one sentence.</p>
               <p>Get a cute robot that does tricks but can&apos;t do work.</p>
               <p>Self-host an AI framework &mdash; if you know Docker.</p>
               <p>Pay for cloud hosting. Forever. And hope they don&apos;t shut down.</p>
-              <p className="text-accent-warm/80 pt-2">
+              <p className="text-accent-warm pt-2">
                 AI has no home. Until now.
               </p>
             </div>
           </div>
 
           <div>
-            <div className="label text-accent-warm/70 mb-4 sm:mb-6">With Jinn</div>
+            <div className="label text-accent-warm/90 mb-4 sm:mb-6">With Jinn</div>
             <div className="space-y-3 sm:space-y-4 text-[14px] sm:text-[15px] leading-relaxed">
               <p>Plug it in. It turns on. Say &ldquo;Hey Jinn.&rdquo;</p>
               <p>A real agent that reasons, plans, and takes action.</p>

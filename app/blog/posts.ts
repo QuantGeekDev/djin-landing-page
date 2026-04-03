@@ -1,3 +1,8 @@
+import { cluster1Posts } from "./cluster1-posts";
+import { cluster2Posts } from "./cluster2-posts";
+import { cluster3Posts } from "./cluster3-posts";
+import { cluster4Posts } from "./cluster4-posts";
+
 export type BlogCategory =
   | "AI Agents"
   | "Smart Home"
@@ -28,7 +33,7 @@ export const categories: { name: BlogCategory; description: string; slug: string
   { name: "Guides", description: "Step-by-step guides for getting the most out of your AI assistant", slug: "guides" },
 ];
 
-export const posts: BlogPost[] = [
+const seedPosts: BlogPost[] = [
   {
     slug: "what-is-an-ai-agent",
     title: "What Is an AI Agent? How It Differs from Chatbots and Smart Assistants",
@@ -431,4 +436,12 @@ The smart display market is bifurcating. Traditional displays from Amazon and Go
 
 If you're happy with "Alexa, set a timer," the Echo Show is hard to beat. If you want "Hey Jinn, check my calendar, find a 30-minute slot this week for a dentist appointment, and text my partner to confirm" \u2014 that's what AI agent displays are built for.`,
   },
+];
+
+export const posts: BlogPost[] = [
+  ...seedPosts,
+  ...cluster1Posts,
+  ...cluster2Posts,
+  ...cluster3Posts,
+  ...cluster4Posts,
 ];

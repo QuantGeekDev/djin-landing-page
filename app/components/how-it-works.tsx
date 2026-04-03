@@ -21,9 +21,9 @@ export default function HowItWorks() {
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-3 left-full w-full h-px bg-border -translate-x-4" />
               )}
-              <div className="font-mono text-accent-warm/30 text-sm mb-4">{s.num}</div>
+              <div className="font-mono text-accent-warm/60 text-sm mb-4">{s.num}</div>
               <h3 className="text-[15px] font-normal mb-2">{s.title}</h3>
-              <p className="text-[13px] text-muted leading-relaxed font-light">{s.desc}</p>
+              <p className="text-[14px] text-muted leading-relaxed font-normal">{s.desc}</p>
             </div>
           ))}
         </div>
