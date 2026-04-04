@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ButtonLink } from "@/app/components/ui";
 
 export default function PreorderCancel() {
   return (
@@ -12,7 +12,7 @@ export default function PreorderCancel() {
             fill="none"
             stroke="currentColor"
             strokeWidth="1.5"
-            className="text-muted"
+            className="text-foreground-muted"
           >
             <line x1="18" y1="6" x2="6" y2="18" />
             <line x1="6" y1="6" x2="18" y2="18" />
@@ -21,16 +21,13 @@ export default function PreorderCancel() {
         <h1 className="heading-lg text-2xl sm:text-3xl mb-3">
           Pre-order not completed
         </h1>
-        <p className="text-muted text-[15px] mb-8 font-light">
+        <p className="text-foreground-secondary text-[15px] mb-8 font-light">
           No worries &mdash; your card was not charged. You can come back
           anytime to reserve your Jinn HoloBox.
         </p>
-        <Link
-          href="/#preorder"
-          className="px-8 py-3 rounded-full bg-foreground text-background text-[14px] font-medium hover:bg-accent-warm hover:text-white transition-all duration-300"
-        >
+        <ButtonLink href="/#preorder" className="transition-emphasis">
           Back to Pre-Order
-        </Link>
+        </ButtonLink>
       </div>
     </div>
   );

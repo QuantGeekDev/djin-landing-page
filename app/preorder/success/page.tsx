@@ -1,5 +1,6 @@
 import { stripe } from "@/app/lib/stripe";
 import Link from "next/link";
+import { BorderedContainer, ButtonLink } from "@/app/components/ui";
 
 export default async function PreorderSuccess({
   searchParams,
@@ -13,15 +14,10 @@ export default async function PreorderSuccess({
       <div className="min-h-screen flex items-center justify-center px-5">
         <div className="text-center">
           <h1 className="heading-lg text-2xl mb-4">Invalid session</h1>
-          <p className="text-muted text-[15px] mb-8">
+          <p className="text-foreground-secondary text-[15px] mb-8">
             We couldn&apos;t find your order details.
           </p>
-          <Link
-            href="/"
-            className="px-6 py-3 rounded-full bg-foreground text-background text-[14px] font-medium hover:bg-accent-warm hover:text-white transition-all duration-300"
-          >
-            Back to Home
-          </Link>
+          <ButtonLink href="/">Back to Home</ButtonLink>
         </div>
       </div>
     );
@@ -58,38 +54,38 @@ export default async function PreorderSuccess({
           <h1 className="heading-lg text-2xl sm:text-3xl mb-3">
             You&apos;re in!
           </h1>
-          <p className="text-muted text-[15px]">
+          <p className="text-foreground-secondary text-[15px]">
             Your Jinn HoloBox pre-order is confirmed.
           </p>
         </div>
 
-        <div className="rounded-2xl border border-border p-6 mb-6">
+        <BorderedContainer className="p-6 mb-6">
           <h2 className="text-[15px] font-normal mb-4">Order Details</h2>
           <div className="space-y-3 text-[13px]">
             {customer && "name" in customer && customer.name && (
               <div className="flex justify-between">
-                <span className="text-muted">Name</span>
+                <span className="text-foreground-tertiary">Name</span>
                 <span>{customer.name}</span>
               </div>
             )}
             {customer && "email" in customer && customer.email && (
               <div className="flex justify-between">
-                <span className="text-muted">Email</span>
+                <span className="text-foreground-tertiary">Email</span>
                 <span>{customer.email}</span>
               </div>
             )}
             <div className="flex justify-between">
-              <span className="text-muted">Batch</span>
+              <span className="text-foreground-tertiary">Batch</span>
               <span>{batchLabel}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted">Deposit paid</span>
+              <span className="text-foreground-tertiary">Deposit paid</span>
               <span className="text-accent-warm">
                 ${(depositCents / 100).toFixed(2)}
               </span>
             </div>
             <div className="flex justify-between">
-              <span className="text-muted">Remaining balance</span>
+              <span className="text-foreground-tertiary">Remaining balance</span>
               <span>${(remainingCents / 100).toFixed(2)}</span>
             </div>
             <div className="border-t border-border pt-3 flex justify-between font-medium">
@@ -97,39 +93,36 @@ export default async function PreorderSuccess({
               <span>${(totalCents / 100).toFixed(2)}</span>
             </div>
           </div>
-        </div>
+        </BorderedContainer>
 
-        <div className="rounded-2xl border border-accent-warm/20 bg-accent-warm/[0.03] p-6 mb-8">
+        <div className="rounded-container border border-accent-warm/20 bg-accent-warm/[0.03] p-6 mb-8">
           <h2 className="text-[15px] font-normal mb-3">What happens next</h2>
-          <ul className="space-y-2 text-[13px] text-muted font-light">
+          <ul className="space-y-2 text-[13px] text-foreground-secondary font-light">
             <li className="flex gap-2">
-              <span className="text-accent-warm/50 mt-0.5">&mdash;</span>
+              <span className="text-accent-warm-dim mt-0.5">&mdash;</span>
               Your card is saved securely. We&apos;ll charge the remaining $
               {(remainingCents / 100).toFixed(2)} when your device is ready to
               ship.
             </li>
             <li className="flex gap-2">
-              <span className="text-accent-warm/50 mt-0.5">&mdash;</span>
+              <span className="text-accent-warm-dim mt-0.5">&mdash;</span>
               You&apos;ll receive a confirmation email shortly.
             </li>
             <li className="flex gap-2">
-              <span className="text-accent-warm/50 mt-0.5">&mdash;</span>
+              <span className="text-accent-warm-dim mt-0.5">&mdash;</span>
               Expected shipping: Summer 2026. We&apos;ll keep you updated.
             </li>
             <li className="flex gap-2">
-              <span className="text-accent-warm/50 mt-0.5">&mdash;</span>
+              <span className="text-accent-warm-dim mt-0.5">&mdash;</span>
               60-day money-back guarantee from delivery.
             </li>
           </ul>
         </div>
 
         <div className="text-center">
-          <Link
-            href="/"
-            className="px-8 py-3 rounded-full bg-foreground text-background text-[14px] font-medium hover:bg-accent-warm hover:text-white transition-all duration-300"
-          >
+          <ButtonLink href="/" className="transition-emphasis">
             Back to Home
-          </Link>
+          </ButtonLink>
         </div>
       </div>
     </div>
