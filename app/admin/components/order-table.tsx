@@ -47,7 +47,7 @@ export default function OrderTable({
       case "failed":
         return "text-red-400 bg-red-400/10";
       default:
-        return "text-muted bg-surface-2";
+        return "text-foreground-muted bg-surface-2";
     }
   };
 
@@ -85,7 +85,7 @@ export default function OrderTable({
         />
 
         {isPending && (
-          <span className="text-muted text-[12px] self-center">Loading...</span>
+          <span className="text-foreground-muted text-[12px] self-center">Loading...</span>
         )}
       </div>
 
@@ -94,19 +94,19 @@ export default function OrderTable({
         <table className="w-full text-[13px]">
           <thead>
             <tr className="border-b border-border text-left">
-              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-muted/50 font-medium">#</th>
-              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-muted/50 font-medium">Customer</th>
-              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-muted/50 font-medium">Batch</th>
-              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-muted/50 font-medium">Deposit</th>
-              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-muted/50 font-medium">Remaining</th>
-              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-muted/50 font-medium">Date</th>
-              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-muted/50 font-medium">Actions</th>
+              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-foreground-muted font-medium">#</th>
+              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-foreground-muted font-medium">Customer</th>
+              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-foreground-muted font-medium">Batch</th>
+              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-foreground-muted font-medium">Deposit</th>
+              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-foreground-muted font-medium">Remaining</th>
+              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-foreground-muted font-medium">Date</th>
+              <th className="px-4 py-3 text-[11px] uppercase tracking-wider text-foreground-muted font-medium">Actions</th>
             </tr>
           </thead>
           <tbody>
             {data.orders.length === 0 ? (
               <tr>
-                <td colSpan={7} className="px-4 py-8 text-center text-muted/50">
+                <td colSpan={7} className="px-4 py-8 text-center text-foreground-muted">
                   No pre-orders yet
                 </td>
               </tr>
@@ -116,10 +116,10 @@ export default function OrderTable({
                   key={order.id}
                   className="border-b border-border/50 hover:bg-surface/50"
                 >
-                  <td className="px-4 py-3 text-muted/50">{order.id}</td>
+                  <td className="px-4 py-3 text-foreground-muted">{order.id}</td>
                   <td className="px-4 py-3">
                     <div>{order.customer_name || "—"}</div>
-                    <div className="text-[11px] text-muted/50">
+                    <div className="text-[11px] text-foreground-muted">
                       {order.customer_email}
                     </div>
                   </td>
@@ -140,7 +140,7 @@ export default function OrderTable({
                       {order.remaining_status}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-muted/50">
+                  <td className="px-4 py-3 text-foreground-muted">
                     {new Date(order.created_at).toLocaleDateString()}
                   </td>
                   <td className="px-4 py-3">
@@ -154,7 +154,7 @@ export default function OrderTable({
                         href={`https://dashboard.stripe.com/customers/${order.stripe_customer_id}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-[11px] text-muted/40 hover:text-accent-warm transition-colors"
+                        className="text-[11px] text-foreground-muted hover:text-accent-warm transition-colors"
                       >
                         Stripe
                       </a>
@@ -170,21 +170,21 @@ export default function OrderTable({
       {/* Pagination */}
       {data.totalPages > 1 && (
         <div className="flex items-center justify-between mt-4 text-[13px]">
-          <span className="text-muted/50">
+          <span className="text-foreground-muted">
             Page {data.page} of {data.totalPages} ({data.totalCount} total)
           </span>
           <div className="flex gap-2">
             <button
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page === 1}
-              className="px-3 py-1.5 rounded-md border border-border text-muted hover:text-foreground disabled:opacity-30"
+              className="px-3 py-1.5 rounded-md border border-border text-foreground-muted hover:text-foreground disabled:opacity-30"
             >
               Previous
             </button>
             <button
               onClick={() => setPage((p) => Math.min(data.totalPages, p + 1))}
               disabled={page === data.totalPages}
-              className="px-3 py-1.5 rounded-md border border-border text-muted hover:text-foreground disabled:opacity-30"
+              className="px-3 py-1.5 rounded-md border border-border text-foreground-muted hover:text-foreground disabled:opacity-30"
             >
               Next
             </button>

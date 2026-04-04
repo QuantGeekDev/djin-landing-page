@@ -29,7 +29,7 @@ export default async function AdminDashboard() {
         <form action={logout}>
           <button
             type="submit"
-            className="text-[13px] text-muted hover:text-foreground transition-colors"
+            className="text-[13px] text-foreground-muted hover:text-foreground transition-colors"
           >
             Logout
           </button>

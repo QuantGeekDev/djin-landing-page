@@ -63,7 +63,7 @@ function Card({
 }) {
   return (
     <div className="rounded-xl border border-border p-4">
-      <p className="text-[11px] uppercase tracking-wider text-muted/50 mb-1">
+      <p className="text-[11px] uppercase tracking-wider text-foreground-muted mb-1">
         {label}
       </p>
       <p
@@ -79,7 +79,7 @@ function Card({
       >
         {value}
       </p>
-      {sub && <p className="text-[11px] text-muted/40 mt-1">{sub}</p>}
+      {sub && <p className="text-[11px] text-foreground-muted mt-1">{sub}</p>}
     </div>
   );
 }

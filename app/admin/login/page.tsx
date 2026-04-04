@@ -30,7 +30,7 @@ export default function AdminLogin() {
           <div>
             <label
               htmlFor="password"
-              className="block text-[13px] text-muted mb-2"
+              className="block text-[13px] text-foreground-tertiary mb-2"
             >
               Password
             </label>
