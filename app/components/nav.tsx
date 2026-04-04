@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { trackEvent } from "@/app/lib/analytics";
+import PreorderButton from "./preorder-button";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -20,32 +20,32 @@ export default function Nav() {
               <Link
                 key={item}
                 href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
-                className="text-[13px] text-muted hover:text-foreground transition-colors duration-200"
+                className="text-[13px] text-foreground-tertiary hover:text-foreground transition-colors duration-200"
               >
                 {item}
               </Link>
             ))}
             <Link
               href="/blog"
-              className="text-[13px] text-muted hover:text-foreground transition-colors duration-200"
+              className="text-[13px] text-foreground-tertiary hover:text-foreground transition-colors duration-200"
             >
               Blog
             </Link>
           </div>
 
           <div className="hidden md:block">
-            <a
-              href="#preorder"
-              onClick={() => trackEvent("preorder_click", { location: "nav" })}
+            <PreorderButton
+              batch="batch_2"
+              source="nav"
               className="text-[13px] font-medium text-background bg-foreground hover:bg-accent-warm hover:text-white px-5 py-2 rounded-full transition-all duration-200"
             >
               Pre-Order
-            </a>
+            </PreorderButton>
           </div>
 
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2.5 -mr-2 text-muted hover:text-foreground transition-colors"
+            className="md:hidden p-2.5 -mr-2 text-foreground-tertiary hover:text-foreground transition-colors"
             aria-label="Menu"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -61,7 +61,7 @@ export default function Nav() {
                 key={item}
                 href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
                 onClick={() => setOpen(false)}
-                className="block text-sm text-muted hover:text-foreground transition-colors"
+                className="block text-sm text-foreground-tertiary hover:text-foreground transition-colors"
               >
                 {item}
               </Link>
@@ -69,17 +69,17 @@ export default function Nav() {
             <Link
               href="/blog"
               onClick={() => setOpen(false)}
-              className="block text-sm text-muted hover:text-foreground transition-colors"
+              className="block text-sm text-foreground-tertiary hover:text-foreground transition-colors"
             >
               Blog
             </Link>
-            <a
-              href="#preorder"
-              onClick={() => { trackEvent("preorder_click", { location: "nav_mobile" }); setOpen(false); }}
-              className="block text-center text-sm font-medium text-background bg-foreground px-5 py-2.5 rounded-full"
+            <PreorderButton
+              batch="batch_2"
+              source="nav_mobile"
+              className="block w-full text-center text-sm font-medium text-background bg-foreground px-5 py-2.5 rounded-full"
             >
               Pre-Order
-            </a>
+            </PreorderButton>
           </div>
         )}
       </div>

@@ -13,7 +13,7 @@ export default function Features() {
   return (
     <section id="features" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="label text-muted text-center mb-4 sm:mb-6">Capabilities</div>
+        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Capabilities</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
           One device. Everything handled.
         </h2>
@@ -24,7 +24,7 @@ export default function Features() {
               <h3 className="text-[14px] font-normal mb-3 group-hover:text-accent-warm transition-colors duration-300">
                 {f.title}
               </h3>
-              <p className="text-[14px] text-muted leading-relaxed font-normal">{f.desc}</p>
+              <p className="text-[14px] text-foreground-secondary leading-relaxed font-normal">{f.desc}</p>
             </div>
           ))}
         </div>

@@ -117,7 +117,7 @@ function renderMarkdown(content: string) {
                   {header.map((cell, ci) => (
                     <th
                       key={ci}
-                      className="px-4 py-3 text-left text-[12px] font-normal text-muted/60"
+                      className="px-4 py-3 text-left text-[13px] font-normal text-foreground-tertiary"
                     >
                       {cell}
                     </th>
@@ -128,7 +128,7 @@ function renderMarkdown(content: string) {
                 {body.map((row, ri) => (
                   <tr key={ri} className="border-b border-border last:border-0">
                     {row.map((cell, ci) => (
-                      <td key={ci} className="px-4 py-3 text-[13px] font-light text-muted">
+                      <td key={ci} className="px-4 py-3 text-[14px] font-normal text-foreground-secondary">
                         {cell}
                       </td>
                     ))}
@@ -171,8 +171,8 @@ function renderMarkdown(content: string) {
     // Checklist items
     if (line.startsWith("- [ ] ")) {
       elements.push(
-        <div key={`check-${i}`} className="flex items-start gap-2 text-[14px] text-muted leading-relaxed font-light ml-1 my-1">
-          <span className="text-muted/30 mt-0.5">&#9744;</span>
+        <div key={`check-${i}`} className="flex items-start gap-2 text-[14px] text-foreground-secondary leading-relaxed font-normal ml-1 my-1">
+          <span className="text-foreground-muted mt-0.5">&#9744;</span>
           <span dangerouslySetInnerHTML={{ __html: inlineFormat(line.slice(6)) }} />
         </div>
       );
@@ -185,9 +185,9 @@ function renderMarkdown(content: string) {
       elements.push(
         <div
           key={`li-${i}`}
-          className="flex items-start gap-2 text-[14px] text-muted leading-relaxed font-light ml-1 my-1"
+          className="flex items-start gap-2 text-[14px] text-foreground-secondary leading-relaxed font-normal ml-1 my-1"
         >
-          <span className="text-accent-warm/40 mt-1">&mdash;</span>
+          <span className="text-accent-warm-dim mt-1">&mdash;</span>
           <span dangerouslySetInnerHTML={{ __html: inlineFormat(line.slice(2)) }} />
         </div>
       );
@@ -201,9 +201,9 @@ function renderMarkdown(content: string) {
       elements.push(
         <div
           key={`ol-${i}`}
-          className="flex items-start gap-3 text-[14px] text-muted leading-relaxed font-light ml-1 my-1"
+          className="flex items-start gap-3 text-[14px] text-foreground-secondary leading-relaxed font-normal ml-1 my-1"
         >
-          <span className="text-accent-warm/40 font-mono text-[12px] mt-0.5 shrink-0">
+          <span className="text-accent-warm-dim font-mono text-[12px] mt-0.5 shrink-0">
             {numMatch[1]}.
           </span>
           <span dangerouslySetInnerHTML={{ __html: inlineFormat(numMatch[2]) }} />
@@ -223,7 +223,7 @@ function renderMarkdown(content: string) {
     elements.push(
       <p
         key={`p-${i}`}
-        className="text-[14px] sm:text-[15px] text-muted leading-relaxed font-light my-4"
+        className="text-[14px] sm:text-[15px] text-foreground-secondary leading-relaxed font-normal my-4"
         dangerouslySetInnerHTML={{ __html: inlineFormat(line) }}
       />
     );
@@ -237,7 +237,7 @@ function inlineFormat(text: string): string {
   return text
     .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground font-normal">$1</strong>')
     .replace(/\*(.+?)\*/g, "<em>$1</em>")
-    .replace(/`(.+?)`/g, '<code class="text-accent-warm/80 bg-surface px-1.5 py-0.5 rounded text-[13px] font-mono">$1</code>')
+    .replace(/`(.+?)`/g, '<code class="text-accent-warm bg-surface px-1.5 py-0.5 rounded text-[13px] font-mono">$1</code>')
     .replace(/\u2014/g, "&mdash;")
     .replace(/\u2192/g, "&rarr;");
 }
@@ -254,21 +254,21 @@ export default async function BlogPost({ params }: Props) {
         <div className="max-w-3xl mx-auto">
           <Link
             href="/blog"
-            className="label text-muted hover:text-foreground transition-colors mb-8 inline-block"
+            className="label text-foreground-tertiary hover:text-foreground transition-colors mb-8 inline-block"
           >
             &larr; All posts
           </Link>
 
           <div className="flex items-center gap-3 mb-4">
-            <span className="label text-accent-warm/60 text-[10px]">
+            <span className="label text-accent-warm-dim">
               {post.category}
             </span>
-            <span className="text-muted/20 text-[10px]">&middot;</span>
-            <span className="label text-muted/30 text-[10px]">
+            <span className="text-foreground-faint">&middot;</span>
+            <span className="label text-foreground-muted">
               {post.readingTime}
             </span>
-            <span className="text-muted/20 text-[10px]">&middot;</span>
-            <time className="label text-muted/30 text-[10px]">
+            <span className="text-foreground-faint">&middot;</span>
+            <time className="label text-foreground-muted">
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",
                 month: "long",
@@ -281,7 +281,7 @@ export default async function BlogPost({ params }: Props) {
             {post.title}
           </h1>
 
-          <p className="text-muted text-[15px] font-light mb-10 sm:mb-12 leading-relaxed">
+          <p className="text-foreground-secondary text-[15px] font-light mb-10 sm:mb-12 leading-relaxed">
             {post.description}
           </p>
 
@@ -295,7 +295,7 @@ export default async function BlogPost({ params }: Props) {
               {post.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1 rounded-full border border-border text-[11px] text-muted/40 font-light"
+                  className="px-3 py-1 rounded-full border border-border text-[11px] text-foreground-muted font-light"
                 >
                   {tag}
                 </span>
@@ -308,7 +308,7 @@ export default async function BlogPost({ params }: Props) {
             <h3 className="text-[15px] font-normal mb-2">
               Want an AI agent on your counter?
             </h3>
-            <p className="text-[13px] text-muted font-light mb-4">
+            <p className="text-[14px] text-foreground-secondary font-normal mb-4">
               Jinn HoloBox is available for pre-order at $299 ($150 off retail).
             </p>
             <a

@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Inter, Geist } from "next/font/google";
 import { JetBrains_Mono } from "next/font/google";
 import { OrganizationSchema, WebSiteSchema } from "./structured-data";
 import CookieConsent from "./components/cookie-consent";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
@@ -90,7 +93,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${mono.variable} h-full`}>
+    <html lang="en" className={cn("h-full", inter.variable, mono.variable, "font-sans", geist.variable)}>
       <body className="min-h-full flex flex-col">
         {GTM_ID && (
           <>

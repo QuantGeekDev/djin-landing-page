@@ -1,6 +1,6 @@
 "use client";
 
-import { trackEvent } from "@/app/lib/analytics";
+import PreorderButton from "./preorder-button";
 
 const BATCHES = [
   { name: "Batch 1", total: 500, sold: 500, status: "sold-out" as const, price: "$249", label: "Early Bird" },
@@ -24,7 +24,7 @@ export default function KickstarterTracker() {
         <h2 className="heading-lg text-3xl md:text-4xl text-center mb-6">
           Fund the future of personal AI
         </h2>
-        <p className="text-center text-muted text-[15px] mb-16">Every pre-order gets us closer to production.</p>
+        <p className="text-center text-foreground-secondary text-[15px] mb-16">Every pre-order gets us closer to production.</p>
 
         {/* Funding meter */}
         <div className="rounded-2xl border border-border p-6 md:p-8 mb-8">
@@ -33,7 +33,7 @@ export default function KickstarterTracker() {
               <p className="text-3xl md:text-4xl font-extralight tracking-tight">
                 ${TOTAL_RAISED.toLocaleString()}
               </p>
-              <p className="text-[13px] text-muted/50 mt-1 font-light">
+              <p className="text-[13px] text-foreground-tertiary mt-1 font-light">
                 of ${GOAL.toLocaleString()} goal
               </p>
             </div>
@@ -45,7 +45,7 @@ export default function KickstarterTracker() {
               ].map((s) => (
                 <div key={s.label} className="text-center">
                   <p className={`text-lg sm:text-xl font-extralight ${s.color}`}>{s.val}</p>
-                  <p className="label text-muted/30 mt-1">{s.label}</p>
+                  <p className="label text-foreground-muted mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -79,46 +79,46 @@ export default function KickstarterTracker() {
                 }`}
               >
                 {isActive && (
-                  <div className="label text-accent-warm text-[9px] mb-3">Live Now</div>
+                  <div className="label text-accent-warm mb-3">Live Now</div>
                 )}
 
                 <div className="flex items-baseline justify-between mb-4">
                   <div>
                     <p className="text-sm font-normal">{batch.name}</p>
-                    <p className="label text-muted/30 mt-0.5">{batch.label}</p>
+                    <p className="label text-foreground-muted mt-0.5">{batch.label}</p>
                   </div>
-                  <p className={`text-xl font-extralight ${isSoldOut ? "line-through text-muted/30" : ""}`}>
+                  <p className={`text-xl font-extralight ${isSoldOut ? "line-through text-foreground-muted" : ""}`}>
                     {batch.price}
                   </p>
                 </div>
 
                 <div className="mb-3">
-                  <div className="flex justify-between label text-muted/30 mb-1.5">
+                  <div className="flex justify-between label text-foreground-muted mb-1.5">
                     <span>{batch.sold}</span>
                     <span>{batch.total}</span>
                   </div>
                   <div className="h-1 bg-surface-2 rounded-full overflow-hidden">
                     <div
-                      className={`h-full rounded-full ${isActive ? "bg-accent-warm/60" : "bg-muted/20"}`}
+                      className={`h-full rounded-full ${isActive ? "bg-accent-warm/60" : "bg-foreground-faint"}`}
                       style={{ width: `${pct}%` }}
                     />
                   </div>
                 </div>
 
-                <p className={`text-[12px] mb-5 ${isActive ? "text-accent-warm/70" : "text-muted/40"}`}>
+                <p className={`text-[13px] mb-5 ${isActive ? "text-accent-warm-dim" : "text-foreground-muted"}`}>
                   {isSoldOut ? "Sold out" : isActive ? `${remaining} remaining` : "Opens after Batch 2"}
                 </p>
 
                 {isActive ? (
-                  <button
-                    onClick={() => trackEvent("preorder_click", { location: "batch_tracker", batch: batch.name, price: batch.price })}
+                  <PreorderButton
+                    batch="batch_2"
+                    source="batch_tracker"
                     className="w-full py-2.5 rounded-lg bg-foreground text-background text-[13px] font-medium hover:bg-accent-warm hover:text-white transition-all duration-200 flex items-center justify-center gap-2"
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="1" y="4" width="22" height="16" rx="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
-                    Pre-Order with Stripe
-                  </button>
+                    Reserve &mdash; $49 Deposit
+                  </PreorderButton>
                 ) : (
-                  <button disabled className="w-full py-2.5 rounded-lg border border-border text-muted/30 text-[13px] cursor-not-allowed">
+                  <button disabled className="w-full py-2.5 rounded-lg border border-border text-foreground-muted text-[13px] cursor-not-allowed">
                     {isSoldOut ? "Sold Out" : "Coming Soon"}
                   </button>
                 )}
@@ -127,8 +127,8 @@ export default function KickstarterTracker() {
           })}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 sm:mt-10 label text-muted/30">
-          <span>Secure Stripe checkout</span>
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 sm:mt-10 label text-foreground-muted">
+          <span>Pay $49 deposit now, remainder when it ships</span>
           <span>Full refund guarantee</span>
           <span>Free worldwide shipping</span>
         </div>

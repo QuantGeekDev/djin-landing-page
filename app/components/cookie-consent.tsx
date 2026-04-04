@@ -48,7 +48,7 @@ export default function CookieConsent() {
 
   return (
     <div className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-sm z-[70] frost rounded-2xl p-5 animate-fade-up">
-      <p className="text-[13px] text-muted leading-relaxed font-light mb-4">
+      <p className="text-[14px] text-foreground-secondary leading-relaxed font-normal mb-4">
         We use cookies to understand how you use our site and improve your
         experience.
       </p>
@@ -61,7 +61,7 @@ export default function CookieConsent() {
         </button>
         <button
           onClick={decline}
-          className="flex-1 py-2 rounded-lg border border-border text-muted text-[13px] hover:text-foreground hover:border-foreground/20 transition-all duration-200"
+          className="flex-1 py-2 rounded-lg border border-border text-foreground-tertiary text-[13px] hover:text-foreground hover:border-foreground/20 transition-all duration-200"
         >
           Decline
         </button>

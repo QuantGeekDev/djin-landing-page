@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 import LazyCanvas from "./lazy-canvas";
-import { trackEvent } from "@/app/lib/analytics";
+import PreorderButton from "./preorder-button";
 
 const Particles = dynamic(() => import("./particles"), { ssr: false });
 
@@ -19,20 +19,20 @@ export default function CTA() {
           <br />
           is waiting.
         </h2>
-        <p className="text-muted text-[15px] mb-4 font-light">
-          Pre-order for $299 &mdash; $150 off the $449 retail price.
+        <p className="text-foreground-secondary text-[15px] mb-4 font-light">
+          $299 total &mdash; $49 deposit now, $250 when it ships.
         </p>
-        <p className="text-muted/50 text-[13px] mb-12 font-light">
+        <p className="text-foreground-tertiary text-[13px] mb-12 font-light">
           60-day money-back guarantee. Bring your own API keys or add Jinn Cloud ($9/mo).
         </p>
-        <a
-          href="#preorder"
-          onClick={() => trackEvent("preorder_click", { location: "cta" })}
+        <PreorderButton
+          batch="batch_2"
+          source="cta"
           className="inline-block px-10 py-3.5 rounded-full bg-foreground text-background font-medium text-[15px] hover:bg-accent-warm hover:text-white transition-all duration-300"
         >
           Pre-Order Now
-        </a>
-        <p className="label text-muted/30 mt-10">
+        </PreorderButton>
+        <p className="label text-foreground-muted mt-10">
           Ships summer 2026 &middot; Free worldwide shipping
         </p>
       </div>

@@ -9,11 +9,11 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-4xl mx-auto">
-        <div className="label text-muted text-center mb-4 sm:mb-6">Setup</div>
+        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Setup</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
           Unbox to &ldquo;Hey Jinn&rdquo; in 30 seconds
         </h2>
-        <p className="text-center text-muted text-[14px] sm:text-[15px] mb-12 sm:mb-20">No accounts. No apps. No developer tools.</p>
+        <p className="text-center text-foreground-secondary text-[14px] sm:text-[15px] mb-12 sm:mb-20">No accounts. No apps. No developer tools.</p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-8">
           {steps.map((s, i) => (
@@ -21,9 +21,9 @@ export default function HowItWorks() {
               {i < steps.length - 1 && (
                 <div className="hidden md:block absolute top-3 left-full w-full h-px bg-border -translate-x-4" />
               )}
-              <div className="font-mono text-accent-warm/60 text-sm mb-4">{s.num}</div>
+              <div className="font-mono text-accent-warm-dim text-sm mb-4">{s.num}</div>
               <h3 className="text-[15px] font-normal mb-2">{s.title}</h3>
-              <p className="text-[14px] text-muted leading-relaxed font-normal">{s.desc}</p>
+              <p className="text-[14px] text-foreground-secondary leading-relaxed font-normal">{s.desc}</p>
             </div>
           ))}
         </div>

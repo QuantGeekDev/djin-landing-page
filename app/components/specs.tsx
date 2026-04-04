@@ -17,22 +17,22 @@ export default function Specs() {
   return (
     <section id="specs" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-3xl mx-auto">
-        <div className="label text-muted text-center mb-4 sm:mb-6">Hardware</div>
+        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Hardware</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
           Real hardware, not a rebranded tablet
         </h2>
-        <p className="text-center text-muted text-[14px] sm:text-[15px] mb-12 sm:mb-20">Built to sit on your counter and run 24/7.</p>
+        <p className="text-center text-foreground-secondary text-[14px] sm:text-[15px] mb-12 sm:mb-20">Built to sit on your counter and run 24/7.</p>
 
         <div className="rounded-2xl border border-border overflow-hidden">
           {specs.map((s, i) => (
             <div key={s.l} className={`flex justify-between items-center px-4 sm:px-6 py-3.5 sm:py-4 gap-4 ${i < specs.length - 1 ? "border-b border-border" : ""}`}>
-              <span className="text-[12px] sm:text-[13px] text-muted/60 font-light shrink-0">{s.l}</span>
+              <span className="text-[13px] text-foreground-tertiary font-light shrink-0">{s.l}</span>
               <span className="text-[12px] sm:text-[13px] font-mono text-right">{s.v}</span>
             </div>
           ))}
         </div>
 
-        <p className="text-center label text-muted/30 mt-8">
+        <p className="text-center label text-foreground-muted mt-8">
           Final specifications may vary
         </p>
       </div>

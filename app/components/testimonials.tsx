@@ -15,7 +15,7 @@ export default function Testimonials() {
   return (
     <section className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        <div className="label text-muted text-center mb-4 sm:mb-6">Early users</div>
+        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Early users</div>
         <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
           Don&apos;t take our word for it
         </h2>
@@ -24,7 +24,7 @@ export default function Testimonials() {
           {quotes.map((q, i) => (
             <div key={i} className="bg-background p-5 sm:p-6 md:p-8">
               <p className="text-[14px] leading-relaxed font-light mb-6">&ldquo;{q.text}&rdquo;</p>
-              <p className="label text-muted/40">{q.who}</p>
+              <p className="label text-foreground-muted">{q.who}</p>
             </div>
           ))}
         </div>
