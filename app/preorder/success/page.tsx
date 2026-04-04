@@ -110,7 +110,7 @@ export default async function PreorderSuccess({
             </li>
             <li className="flex gap-2">
               <span className="text-accent-warm-dim mt-0.5">&mdash;</span>
-              Expected shipping: Summer 2026. We&apos;ll keep you updated.
+              Expected shipping: Winter 2026. We&apos;ll keep you updated.
             </li>
             <li className="flex gap-2">
               <span className="text-accent-warm-dim mt-0.5">&mdash;</span>

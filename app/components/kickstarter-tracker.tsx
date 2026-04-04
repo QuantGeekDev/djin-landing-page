@@ -130,7 +130,7 @@ export default function KickstarterTracker() {
       <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mt-8 sm:mt-10 label text-foreground-muted">
         <span>Pay $49 deposit now, remainder when it ships</span>
         <span>Full refund guarantee</span>
-        <span>Free worldwide shipping</span>
+        <span>Worldwide shipping</span>
       </div>
     </Section>
   );

@@ -34,7 +34,7 @@ export default function CTA() {
           Pre-Order Now
         </PreorderButton>
         <p className="label text-foreground-muted mt-10">
-          Ships summer 2026 &middot; Free worldwide shipping
+          Ships winter 2026 &middot; Worldwide shipping
         </p>
       </div>
     </Section>

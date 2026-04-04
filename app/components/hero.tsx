@@ -96,7 +96,7 @@ export default function Hero() {
         </div>
 
         <p className="label text-foreground-muted mt-12">
-          Ships summer 2026 &middot; Free worldwide shipping
+          Ships winter 2026 &middot; Worldwide shipping
         </p>
       </div>
     </section>

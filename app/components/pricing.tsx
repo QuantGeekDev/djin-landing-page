@@ -114,7 +114,7 @@ export default function Pricing() {
       </div>
 
       <p className="text-center label text-foreground-muted mt-8">
-        Free worldwide shipping &middot; Secure Stripe checkout &middot; Full refund guarantee
+        Worldwide shipping &middot; Rates vary by region &middot; Secure Stripe checkout &middot; Full refund guarantee
       </p>
     </Section>
   );

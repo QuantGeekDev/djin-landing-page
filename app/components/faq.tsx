@@ -20,7 +20,7 @@ const faqs = [
   { q: "What LLMs are supported?", a: "OpenAI, Anthropic, Google out of the box. Any OpenAI-compatible API works, including local models via Ollama." },
   { q: "Do I need Jinn Cloud?", a: "No. If you have your own LLM API keys (OpenAI, Anthropic, Google, etc.), you can use them directly \u2014 no subscription needed. Jinn Cloud ($9/mo) is for people who want a managed experience without dealing with API keys." },
   { q: "What if I don\u2019t like it?", a: "60-day money-back guarantee. Full refund, we cover return shipping. No questions asked." },
-  { q: "When does it ship?", a: "Summer 2026. Pre-orders ship first. Full refund if we don\u2019t deliver." },
+  { q: "When does it ship?", a: "Winter 2026. Pre-orders ship first. Full refund if we don\u2019t deliver." },
 ];
 
 export default function FAQ() {
