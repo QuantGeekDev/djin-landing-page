@@ -1,3 +1,5 @@
+import { Section, SectionHeader } from "@/app/components/ui";
+
 const steps = [
   { num: "01", title: "Unbox & plug in", desc: "Take it out, plug in USB-C. It powers on and connects to your WiFi." },
   { num: "02", title: "Say hello", desc: "Say \u201CHey Jinn\u201D and introduce yourself. Your first conversation starts in seconds." },
@@ -7,27 +9,25 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Setup</div>
-        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
-          Unbox to &ldquo;Hey Jinn&rdquo; in 30 seconds
-        </h2>
-        <p className="text-center text-foreground-secondary text-[14px] sm:text-[15px] mb-12 sm:mb-20">No accounts. No apps. No developer tools.</p>
+    <Section id="how-it-works" maxWidth="4xl">
+      <SectionHeader
+        label="Setup"
+        heading={<>Unbox to &ldquo;Hey Jinn&rdquo; in 30 seconds</>}
+        subtitle="No accounts. No apps. No developer tools."
+      />
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-8">
-          {steps.map((s, i) => (
-            <div key={s.num} className="relative">
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-3 left-full w-full h-px bg-border -translate-x-4" />
-              )}
-              <div className="font-mono text-accent-warm-dim text-sm mb-4">{s.num}</div>
-              <h3 className="text-[15px] font-normal mb-2">{s.title}</h3>
-              <p className="text-[14px] text-foreground-secondary leading-relaxed font-normal">{s.desc}</p>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-8">
+        {steps.map((s, i) => (
+          <div key={s.num} className="relative">
+            {i < steps.length - 1 && (
+              <div className="hidden md:block absolute top-3 left-full w-full h-px bg-border -translate-x-4" />
+            )}
+            <div className="font-mono text-accent-warm-dim text-sm mb-4">{s.num}</div>
+            <h3 className="text-[15px] font-normal mb-2">{s.title}</h3>
+            <p className="text-[14px] text-foreground-secondary leading-relaxed font-normal">{s.desc}</p>
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

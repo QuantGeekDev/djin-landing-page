@@ -1,3 +1,5 @@
+import { Section, SectionHeader, CardGrid, CardGridItem } from "@/app/components/ui";
+
 const cases = [
   { cat: "Personal", items: ["Morning briefing \u2014 weather, calendar, news", "Grocery lists by voice", "Hands-free reminders and timers", "Habit and routine tracking"] },
   { cat: "Smart Home", items: ["Control lights, thermostat, locks", "Complex automations by voice", "Security camera monitoring", "\u201CHey Jinn, I\u2019m going to bed\u201D"] },
@@ -7,26 +9,24 @@ const cases = [
 
 export default function UseCases() {
   return (
-    <section className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Use cases</div>
-        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
-          What will you ask Jinn first?
-        </h2>
+    <Section>
+      <SectionHeader
+        label="Use cases"
+        heading="What will you ask Jinn first?"
+      />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
-          {cases.map((c) => (
-            <div key={c.cat} className="bg-background p-5 sm:p-6 md:p-8">
-              <h3 className="label text-accent-warm mb-5">{c.cat}</h3>
-              <ul className="space-y-3">
-                {c.items.map((item) => (
-                  <li key={item} className="text-[14px] text-foreground-secondary leading-relaxed font-normal">{item}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      <CardGrid columns={4}>
+        {cases.map((c) => (
+          <CardGridItem key={c.cat}>
+            <h3 className="label text-accent-warm mb-5">{c.cat}</h3>
+            <ul className="space-y-3">
+              {c.items.map((item) => (
+                <li key={item} className="text-[14px] text-foreground-secondary leading-relaxed font-normal">{item}</li>
+              ))}
+            </ul>
+          </CardGridItem>
+        ))}
+      </CardGrid>
+    </Section>
   );
 }

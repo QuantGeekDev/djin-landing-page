@@ -1,3 +1,5 @@
+import { Section, SectionHeader, BorderedContainer } from "@/app/components/ui";
+
 const categories = [
   { name: "Smart Speakers", sub: "Voice assistants in a speaker", v: [1,0,0,0,0,0,0] },
   { name: "Chat Apps", sub: "AI chatbots via messaging", v: [0,0,0,1,0,0,0] },
@@ -18,66 +20,64 @@ function Dash() {
 
 export default function Comparison() {
   return (
-    <section className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
-      <div className="max-w-4xl mx-auto">
-        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Comparison</div>
-        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
-          Jinn does what nothing else can
-        </h2>
+    <Section maxWidth="4xl">
+      <SectionHeader
+        label="Comparison"
+        heading="Jinn does what nothing else can"
+      />
 
-        <div className="hidden md:block overflow-hidden rounded-2xl border border-border">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-border">
-                <th className="text-left px-6 py-4 font-light text-foreground-tertiary text-xs w-52" />
-                {cols.map(c => (
-                  <th key={c} className="px-3 py-4 label text-foreground-tertiary text-center">{c}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {categories.map((cat) => {
-                const isJinn = cat.name === "Jinn HoloBox";
-                return (
-                  <tr key={cat.name} className={`border-b border-border last:border-0 ${isJinn ? "bg-accent-warm/[0.03]" : ""}`}>
-                    <td className="px-6 py-5">
-                      <p className={`text-[14px] ${isJinn ? "text-accent-warm font-normal" : "font-light"}`}>{cat.name}</p>
-                      <p className="text-[12px] text-foreground-muted mt-0.5">{cat.sub}</p>
-                    </td>
-                    {cat.v.map((val, i) => (
-                      <td key={i} className="px-3 py-5 text-center">{val ? <Check /> : <Dash />}</td>
-                    ))}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
-
-        {/* Mobile */}
-        <div className="md:hidden space-y-3">
-          {categories.map((cat) => {
-            const isJinn = cat.name === "Jinn HoloBox";
-            const count = cat.v.filter(Boolean).length;
-            return (
-              <div key={cat.name} className={`rounded-xl border p-4 ${isJinn ? "border-accent-warm/30 bg-accent-warm/[0.03]" : "border-border"}`}>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className={`text-sm ${isJinn ? "text-accent-warm" : ""}`}>{cat.name}</p>
-                    <p className="text-[12px] text-foreground-muted">{cat.sub}</p>
-                  </div>
-                  <span className={`font-mono text-sm ${isJinn ? "text-accent-warm" : "text-foreground-muted"}`}>{count}/7</span>
-                </div>
-                <div className="flex gap-1 mt-3">
+      <BorderedContainer className="hidden md:block">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-border">
+              <th className="text-left px-6 py-4 font-light text-foreground-tertiary text-xs w-52" />
+              {cols.map(c => (
+                <th key={c} className="px-3 py-4 label text-foreground-tertiary text-center">{c}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {categories.map((cat) => {
+              const isJinn = cat.name === "Jinn HoloBox";
+              return (
+                <tr key={cat.name} className={`border-b border-border last:border-0 ${isJinn ? "bg-accent-warm/[0.03]" : ""}`}>
+                  <td className="px-6 py-5">
+                    <p className={`text-[14px] ${isJinn ? "text-accent-warm font-normal" : "font-light"}`}>{cat.name}</p>
+                    <p className="text-[12px] text-foreground-muted mt-0.5">{cat.sub}</p>
+                  </td>
                   {cat.v.map((val, i) => (
-                    <div key={i} className={`h-1 flex-1 rounded-full ${val ? (isJinn ? "bg-accent-warm/60" : "bg-foreground/20") : "bg-border"}`} />
+                    <td key={i} className="px-3 py-5 text-center">{val ? <Check /> : <Dash />}</td>
                   ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </BorderedContainer>
+
+      {/* Mobile */}
+      <div className="md:hidden space-y-3">
+        {categories.map((cat) => {
+          const isJinn = cat.name === "Jinn HoloBox";
+          const count = cat.v.filter(Boolean).length;
+          return (
+            <div key={cat.name} className={`rounded-card border p-4 ${isJinn ? "border-accent-warm/30 bg-accent-warm/[0.03]" : "border-border"}`}>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className={`text-sm ${isJinn ? "text-accent-warm" : ""}`}>{cat.name}</p>
+                  <p className="text-[12px] text-foreground-muted">{cat.sub}</p>
                 </div>
+                <span className={`font-mono text-sm ${isJinn ? "text-accent-warm" : "text-foreground-muted"}`}>{count}/7</span>
               </div>
-            );
-          })}
-        </div>
+              <div className="flex gap-1 mt-3">
+                {cat.v.map((val, i) => (
+                  <div key={i} className={`h-1 flex-1 rounded-full ${val ? (isJinn ? "bg-accent-warm/60" : "bg-foreground/20") : "bg-border"}`} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }

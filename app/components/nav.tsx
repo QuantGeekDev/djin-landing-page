@@ -10,7 +10,7 @@ export default function Nav() {
   return (
     <nav className="fixed top-10 left-0 right-0 z-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="frost rounded-full px-6 h-12 flex items-center justify-between">
+        <div className="frost rounded-button px-6 h-12 flex items-center justify-between">
           <Link href="/" className="label text-foreground tracking-[0.15em]">
             jinn
           </Link>
@@ -20,14 +20,14 @@ export default function Nav() {
               <Link
                 key={item}
                 href={`#${item.toLowerCase().replace(/\s/g, "-")}`}
-                className="text-[13px] text-foreground-tertiary hover:text-foreground transition-colors duration-200"
+                className="text-[13px] text-foreground-tertiary hover:text-foreground transition-interactive"
               >
                 {item}
               </Link>
             ))}
             <Link
               href="/blog"
-              className="text-[13px] text-foreground-tertiary hover:text-foreground transition-colors duration-200"
+              className="text-[13px] text-foreground-tertiary hover:text-foreground transition-interactive"
             >
               Blog
             </Link>
@@ -37,7 +37,7 @@ export default function Nav() {
             <PreorderButton
               batch="batch_2"
               source="nav"
-              className="text-[13px] font-medium text-background bg-foreground hover:bg-accent-warm hover:text-white px-5 py-2 rounded-full transition-all duration-200"
+              className="text-[13px] font-medium text-background bg-foreground hover:bg-accent-warm hover:text-white px-5 py-2 rounded-button transition-interactive"
             >
               Pre-Order
             </PreorderButton>
@@ -45,7 +45,7 @@ export default function Nav() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2.5 -mr-2 text-foreground-tertiary hover:text-foreground transition-colors"
+            className="md:hidden p-2.5 -mr-2 text-foreground-tertiary hover:text-foreground transition-interactive"
             aria-label="Menu"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -55,7 +55,7 @@ export default function Nav() {
         </div>
 
         {open && (
-          <div className="md:hidden frost rounded-2xl mt-2 p-6 space-y-4">
+          <div className="md:hidden frost rounded-container mt-2 p-6 space-y-4">
             {["Features", "How It Works", "Specs", "Pricing", "FAQ"].map((item) => (
               <Link
                 key={item}
@@ -76,7 +76,7 @@ export default function Nav() {
             <PreorderButton
               batch="batch_2"
               source="nav_mobile"
-              className="block w-full text-center text-sm font-medium text-background bg-foreground px-5 py-2.5 rounded-full"
+              className="block w-full text-center text-sm font-medium text-background bg-foreground px-5 py-2.5 rounded-button"
             >
               Pre-Order
             </PreorderButton>

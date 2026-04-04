@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { posts } from "../posts";
+import { ButtonLink } from "@/app/components/ui";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -304,19 +305,19 @@ export default async function BlogPost({ params }: Props) {
           </div>
 
           {/* CTA */}
-          <div className="mt-12 rounded-2xl border border-accent-warm/20 bg-accent-warm/[0.02] p-6 sm:p-8 text-center">
+          <div className="mt-12 rounded-container border border-accent-warm/20 bg-accent-warm/[0.02] p-6 sm:p-8 text-center">
             <h3 className="text-[15px] font-normal mb-2">
               Want an AI agent on your counter?
             </h3>
             <p className="text-[14px] text-foreground-secondary font-normal mb-4">
               Jinn HoloBox is available for pre-order at $299 ($150 off retail).
             </p>
-            <a
+            <ButtonLink
               href="/#pricing"
-              className="inline-block px-6 py-2.5 rounded-full bg-foreground text-background text-[13px] font-medium hover:bg-accent-warm hover:text-white transition-all duration-200"
+              className="px-6 py-2.5 text-[13px]"
             >
               Pre-Order Now
-            </a>
+            </ButtonLink>
           </div>
         </div>
       </article>

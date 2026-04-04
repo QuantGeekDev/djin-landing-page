@@ -283,21 +283,208 @@ Opacity modifiers (`/30`, `/50`, etc.) are acceptable on **backgrounds and borde
 
 When creating a new section or component:
 
-1. Follow the **section spacing** pattern (`py-20 sm:py-32 md:py-40 px-5 sm:px-6`)
-2. Use the **section header** pattern (label + heading + optional subtitle)
-3. Pick text colors from the **5-tier hierarchy** -- don't invent new grays
-4. Use `text-body` or `text-body-lg` for descriptive copy instead of assembling classes
-5. Use `label` class for small uppercase chrome text
-6. Test contrast on `#000` before shipping
+1. Use `<Section>` for the wrapper -- it handles padding and max-width
+2. Use `<SectionHeader>` for the label + heading + optional subtitle pattern
+3. Use `<Button>` or `<ButtonLink>` for CTAs -- choose `variant` and `shape`
+4. Use `<CardGrid>` for bordered card grids with the `gap-px` divider trick
+5. Use `<BorderedContainer>` for bordered containers with optional row dividers
+6. Pick text colors from the **5-tier hierarchy** -- don't invent new grays
+7. Use `text-body` or `text-body-lg` for descriptive copy instead of assembling classes
+8. Use `label` class for small uppercase chrome text
+9. Test contrast on `#000` before shipping
+
+---
+
+## UI Components
+
+Reusable UI primitives live in `app/components/ui/`. Import from the barrel:
+```tsx
+import { Section, SectionHeader, Button, ButtonLink, CardGrid, CardGridItem, BorderedContainer } from "@/app/components/ui";
+```
+
+### Section
+
+Wraps a `<section>` with consistent padding (`section-padding` class) and a max-width inner container.
+
+```tsx
+<Section id="features" maxWidth="5xl">
+  {/* content */}
+</Section>
+```
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `id` | `string?` | — | Scroll anchor ID |
+| `maxWidth` | `"xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl"` | `"5xl"` | Inner container max-width |
+| `className` | `string?` | — | Additional classes on `<section>` |
+
+**Not for:** Hero (custom layout), Footer (unique padding), Nav (fixed positioning), blog pages (different padding pattern).
+
+### SectionHeader
+
+Renders the standard label + heading + optional subtitle cluster. Automatically sets bottom margin on the last element (`mb-12 sm:mb-20`).
+
+```tsx
+<SectionHeader
+  label="Capabilities"
+  heading="One device. Everything handled."
+  subtitle="Optional description text."
+/>
+```
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `label` | `string` | — | Uppercase mono label text |
+| `heading` | `ReactNode` | — | Heading content (supports JSX for `<br/>`, `<span>`) |
+| `subtitle` | `string?` | — | Optional subtitle paragraph |
+| `labelClassName` | `string?` | — | Override label classes |
+| `headingClassName` | `string?` | — | Override heading classes (e.g., `"md:text-5xl"`) |
+
+### Button / ButtonLink
+
+Two-axis variant system: `variant` (primary/secondary) x `shape` (pill/rect).
+
+```tsx
+<Button variant="primary" shape="pill">Click me</Button>
+<ButtonLink href="#pricing" variant="secondary" shape="rect" fullWidth>Learn more</ButtonLink>
+```
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"primary" \| "secondary"` | `"primary"` | Color scheme |
+| `shape` | `"pill" \| "rect"` | `"pill"` | Border radius style |
+| `fullWidth` | `boolean` | `false` | Full-width (`w-full`) |
+| `className` | `string?` | — | Override/extend styles |
+
+- `Button` renders a `<button>` element
+- `ButtonLink` renders an `<a>` element (use for navigation CTAs)
+- For `PreorderButton` (Stripe checkout), pass styles via its `className` prop directly
+
+### CardGrid / CardGridItem
+
+Grid with 1px borders between cards using the `gap-px bg-border` trick.
+
+```tsx
+<CardGrid columns={4}>
+  <CardGridItem className="group">Card content</CardGridItem>
+</CardGrid>
+```
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `columns` | `2 \| 3 \| 4` | `3` | Column count at largest breakpoint |
+
+### BorderedContainer
+
+Rounded bordered container, optionally with `space-y-px` row dividers.
+
+```tsx
+<BorderedContainer divided>
+  <div className="bg-surface">Row 1</div>
+  <div className="bg-surface">Row 2</div>
+</BorderedContainer>
+```
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `divided` | `boolean` | `false` | Add `space-y-px` for row dividers |
+
+### Accordion (shadcn/Base UI)
+
+Accessible accordion with smooth height animation, keyboard navigation, and ARIA attributes. Used in the FAQ section.
+
+```tsx
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/app/components/ui/accordion";
+
+<Accordion>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Question</AccordionTrigger>
+    <AccordionContent>Answer</AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+
+Styled to match the site aesthetic: `+` icon that rotates 45deg, `bg-surface` items, `space-y-px` dividers.
+
+---
+
+## Extended Design Tokens
+
+### Radius Tokens
+
+| Token | Value | Tailwind utility | Use |
+|---|---|---|---|
+| `--radius-container` | `1rem` (16px) | `rounded-container` | Section containers, card grids, modals |
+| `--radius-card` | `0.75rem` (12px) | `rounded-card` | Individual cards (batch cards, comparison) |
+| `--radius-button` | `9999px` | `rounded-button` | Pill buttons, nav bar |
+| `--radius-button-rect` | `0.5rem` (8px) | `rounded-button-rect` | Rectangular buttons (pricing, cookie) |
+
+### Duration Tokens
+
+| Token | Value | Use |
+|---|---|---|
+| `--duration-fast` | `150ms` | Subtle color changes |
+| `--duration-normal` | `200ms` | Interactive elements |
+| `--duration-slow` | `300ms` | Emphasis transitions |
+
+### Transition Utilities
+
+| Utility | Properties | Duration | Use |
+|---|---|---|---|
+| `transition-interactive` | color, bg, border, opacity, transform | 200ms | Buttons, links, interactive elements |
+| `transition-emphasis` | all | 300ms | Hero CTAs, prominent animations |
+
+### Section Spacing
+
+```css
+.section-padding  /* py-20 sm:py-32 md:py-40 px-5 sm:px-6 */
+```
+
+Applied automatically by `<Section>`. Override via `className` for exceptions (e.g., CTA section uses `md:py-48`).
+
+### shadcn Bridge Variables
+
+The site maps its existing tokens to shadcn's expected variable names for compatibility:
+
+| shadcn variable | Maps to |
+|---|---|
+| `--primary` | `var(--accent-warm)` |
+| `--muted` | `var(--surface)` |
+| `--card` | `var(--surface)` |
+| `--ring` | `var(--accent-warm)` |
+
+These are defined in `:root` and registered in `@theme inline`. Only the Accordion component currently uses them.
+
+---
+
+### Utility: cn()
+
+Class merging utility (clsx + tailwind-merge). Used by all UI components for className composition:
+
+```tsx
+import { cn } from "@/app/lib/cn";
+cn("text-sm font-bold", condition && "text-red-500", className)
+```
 
 ### File Organization
 
 ```
 app/
-  globals.css          -- All tokens, typography, and component classes
+  globals.css          -- All tokens, typography, component classes, and utilities
   layout.tsx           -- Font loading (Inter, JetBrains Mono), metadata
   page.tsx             -- Landing page composition
+  lib/
+    cn.ts              -- Class merging utility (clsx + tailwind-merge)
+    analytics.ts       -- Event tracking
   components/
+    ui/                -- Reusable UI primitives
+      index.ts         -- Barrel export
+      section.tsx      -- Section wrapper
+      section-header.tsx -- Label + heading + subtitle
+      button.tsx       -- Button + ButtonLink
+      card-grid.tsx    -- CardGrid + CardGridItem
+      bordered-container.tsx -- Bordered wrapper
+      accordion.tsx    -- Accessible accordion (shadcn/Base UI)
     hero.tsx           -- Hero with Aurora + Orb
     problem-solution.tsx
     comparison.tsx     -- Feature comparison table
@@ -308,7 +495,7 @@ app/
     specs.tsx          -- Hardware spec table
     pricing.tsx        -- Pricing tiers
     kickstarter-tracker.tsx  -- Campaign progress + batch cards
-    faq.tsx            -- Accordion FAQ
+    faq.tsx            -- Accordion FAQ (uses shadcn Accordion)
     cta.tsx            -- Final CTA with particles
     nav.tsx            -- Floating frost nav bar
     footer.tsx         -- Footer with link columns

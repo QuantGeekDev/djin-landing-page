@@ -1,3 +1,5 @@
+import { Section, SectionHeader, BorderedContainer } from "@/app/components/ui";
+
 const items = [
   {
     title: "Not a chatbot",
@@ -28,34 +30,32 @@ const items = [
 
 export default function WhyJinn() {
   return (
-    <section className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
-      <div className="max-w-3xl mx-auto">
-        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Why Jinn</div>
-        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
-          We looked at every alternative.
-        </h2>
-        <p className="text-center text-foreground-secondary text-[14px] sm:text-[15px] mb-12 sm:mb-20">None of them are what we wanted. So we built it.</p>
+    <Section maxWidth="3xl">
+      <SectionHeader
+        label="Why Jinn"
+        heading="We looked at every alternative."
+        subtitle="None of them are what we wanted. So we built it."
+      />
 
-        <div className="space-y-px rounded-2xl overflow-hidden border border-border">
-          {items.map((item) => (
-            <div key={item.title} className="bg-surface">
-              <div className="px-6 py-4 border-b border-border">
-                <h3 className="text-[15px] font-normal">{item.title}</h3>
+      <BorderedContainer divided>
+        {items.map((item) => (
+          <div key={item.title} className="bg-surface">
+            <div className="px-6 py-4 border-b border-border">
+              <h3 className="text-[15px] font-normal">{item.title}</h3>
+            </div>
+            <div className="grid md:grid-cols-2">
+              <div className="px-6 py-5 border-b md:border-b-0 md:border-r border-border">
+                <div className="label text-foreground-muted mb-2">Alternative</div>
+                <p className="text-[14px] text-foreground-secondary leading-relaxed font-light">{item.alt}</p>
               </div>
-              <div className="grid md:grid-cols-2">
-                <div className="px-6 py-5 border-b md:border-b-0 md:border-r border-border">
-                  <div className="label text-foreground-muted mb-2">Alternative</div>
-                  <p className="text-[14px] text-foreground-secondary leading-relaxed font-light">{item.alt}</p>
-                </div>
-                <div className="px-6 py-5">
-                  <div className="label text-accent-warm-dim mb-2">Jinn</div>
-                  <p className="text-[14px] leading-relaxed font-light">{item.jinn}</p>
-                </div>
+              <div className="px-6 py-5">
+                <div className="label text-accent-warm-dim mb-2">Jinn</div>
+                <p className="text-[14px] leading-relaxed font-light">{item.jinn}</p>
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
+          </div>
+        ))}
+      </BorderedContainer>
+    </Section>
   );
 }

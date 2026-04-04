@@ -1,7 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { trackEvent } from "@/app/lib/analytics";
+import { Section, SectionHeader, ButtonLink } from "@/app/components/ui";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/app/components/ui/accordion";
 
 const faqs = [
   { q: "What is Jinn?", a: "An AI agent inside the HoloBox \u2014 a smart display for your counter, desk, or nightstand. It listens for your voice, manages your day, controls your smart home, and connects to your apps." },
@@ -18,50 +24,31 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [open, setOpen] = useState<number | null>(null);
-
   return (
-    <section id="faq" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
-      <div className="max-w-2xl mx-auto">
-        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">FAQ</div>
-        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
-          Still deciding? Read this.
-        </h2>
+    <Section id="faq" maxWidth="2xl">
+      <SectionHeader
+        label="FAQ"
+        heading="Still deciding? Read this."
+      />
 
-        <div className="space-y-px rounded-2xl overflow-hidden border border-border">
-          {faqs.map((f, i) => (
-            <div key={i} className="bg-surface">
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between px-6 py-4 text-left group"
-              >
-                <span className="text-[14px] font-light group-hover:text-accent-warm transition-colors duration-200">{f.q}</span>
-                <svg
-                  className={`w-3.5 h-3.5 text-foreground-muted flex-shrink-0 ml-4 transition-transform duration-200 ${open === i ? "rotate-45" : ""}`}
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5"
-                >
-                  <path d="M12 5v14M5 12h14" />
-                </svg>
-              </button>
-              {open === i && (
-                <div className="px-6 pb-5 text-[14px] text-foreground-secondary leading-relaxed font-normal">
-                  {f.a}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+      <Accordion>
+        {faqs.map((f, i) => (
+          <AccordionItem key={i} value={`item-${i}`}>
+            <AccordionTrigger>{f.q}</AccordionTrigger>
+            <AccordionContent>{f.a}</AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
 
-        <div className="flex justify-center mt-10 sm:mt-12">
-          <a
-            href="#preorder"
-            onClick={() => trackEvent("preorder_click", { location: "faq" })}
-            className="px-8 py-3 rounded-full bg-foreground text-background font-medium text-[13px] hover:bg-accent-warm hover:text-white transition-all duration-200"
-          >
-            Pre-Order for $299 &mdash; Save $150
-          </a>
-        </div>
+      <div className="flex justify-center mt-10 sm:mt-12">
+        <ButtonLink
+          href="#preorder"
+          onClick={() => trackEvent("preorder_click", { location: "faq" })}
+          className="py-3 text-[13px]"
+        >
+          Pre-Order for $299 &mdash; Save $150
+        </ButtonLink>
       </div>
-    </section>
+    </Section>
   );
 }

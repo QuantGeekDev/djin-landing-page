@@ -13,9 +13,19 @@ async function migrate() {
   const schemaPath = resolve(__dirname, "../app/lib/schema.sql");
   const schema = readFileSync(schemaPath, "utf-8");
 
-  console.log("Running migration...");
-  // Use sql.query() for raw SQL strings (tagged template only accepts template literals)
-  await sql.query(schema);
+  // Split on semicolons and run each statement separately
+  // (Neon HTTP driver doesn't support multiple statements in one call)
+  const statements = schema
+    .split(";")
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+
+  console.log(`Running ${statements.length} migration statements...`);
+
+  for (const statement of statements) {
+    await sql.query(statement);
+  }
+
   console.log("Migration complete");
 }
 

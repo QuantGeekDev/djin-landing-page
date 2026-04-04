@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { posts, categories } from "./posts";
+import { BorderedContainer } from "@/app/components/ui";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -37,7 +38,7 @@ export default function BlogIndex() {
         </div>
 
         {/* Posts */}
-        <div className="space-y-px rounded-2xl overflow-hidden border border-border">
+        <BorderedContainer divided>
           {posts.map((post) => (
             <Link
               key={post.slug}
@@ -68,7 +69,7 @@ export default function BlogIndex() {
               </div>
             </Link>
           ))}
-        </div>
+        </BorderedContainer>
       </div>
     </div>
   );

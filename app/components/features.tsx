@@ -1,3 +1,5 @@
+import { Section, SectionHeader, CardGrid, CardGridItem } from "@/app/components/ui";
+
 const features = [
   { title: "Voice-first", desc: "Say \u201CHey Jinn\u201D and just talk. It listens, understands context, and responds in real time \u2014 like a conversation, not a command." },
   { title: "Smart display", desc: "Glance at your calendar, check the weather, read a message \u2014 all on the 5-inch display. Or just ask out loud." },
@@ -11,24 +13,22 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Capabilities</div>
-        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">
-          One device. Everything handled.
-        </h2>
+    <Section id="features">
+      <SectionHeader
+        label="Capabilities"
+        heading="One device. Everything handled."
+      />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
-          {features.map((f) => (
-            <div key={f.title} className="bg-background p-5 sm:p-6 md:p-8 group">
-              <h3 className="text-[14px] font-normal mb-3 group-hover:text-accent-warm transition-colors duration-300">
-                {f.title}
-              </h3>
-              <p className="text-[14px] text-foreground-secondary leading-relaxed font-normal">{f.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+      <CardGrid columns={4}>
+        {features.map((f) => (
+          <CardGridItem key={f.title} className="group">
+            <h3 className="text-[14px] font-normal mb-3 group-hover:text-accent-warm transition-colors duration-300">
+              {f.title}
+            </h3>
+            <p className="text-[14px] text-foreground-secondary leading-relaxed font-normal">{f.desc}</p>
+          </CardGridItem>
+        ))}
+      </CardGrid>
+    </Section>
   );
 }

@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import PreorderButton from "./preorder-button";
+import { ButtonLink } from "@/app/components/ui";
 
 const Aurora = dynamic(() => import("./aurora"), { ssr: false });
 const Orb = dynamic(() => import("./orb"), { ssr: false });
@@ -33,16 +34,17 @@ export default function Hero() {
           <PreorderButton
             batch="batch_2"
             source="hero"
-            className="px-8 py-3.5 rounded-full bg-foreground text-background font-medium text-[15px] hover:bg-accent-warm hover:text-white transition-all duration-300 text-center"
+            className="px-8 py-3.5 rounded-button bg-foreground text-background font-medium text-[15px] hover:bg-accent-warm hover:text-white transition-emphasis text-center"
           >
             Pre-Order &mdash; $49 Deposit
           </PreorderButton>
-          <a
+          <ButtonLink
             href="#how-it-works"
-            className="px-8 py-3.5 rounded-full border border-border text-foreground-tertiary hover:text-foreground hover:border-foreground/20 font-normal text-[15px] transition-all duration-300 text-center"
+            variant="secondary"
+            className="font-normal transition-emphasis text-center"
           >
             See How It Works
-          </a>
+          </ButtonLink>
         </div>
 
         <p className="text-[13px] text-foreground-tertiary font-light mb-14 sm:mb-20">

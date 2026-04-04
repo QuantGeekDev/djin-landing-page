@@ -5,7 +5,7 @@ import { JetBrains_Mono } from "next/font/google";
 import { OrganizationSchema, WebSiteSchema } from "./structured-data";
 import CookieConsent from "./components/cookie-consent";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/cn";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 

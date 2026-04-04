@@ -1,3 +1,5 @@
+import { Section, SectionHeader, BorderedContainer } from "@/app/components/ui";
+
 const specs = [
   { l: "Display", v: '5" IPS Touchscreen' },
   { l: "Resolution", v: "720 \u00d7 1280" },
@@ -15,27 +17,25 @@ const specs = [
 
 export default function Specs() {
   return (
-    <section id="specs" className="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
-      <div className="max-w-3xl mx-auto">
-        <div className="label text-foreground-tertiary text-center mb-4 sm:mb-6">Hardware</div>
-        <h2 className="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
-          Real hardware, not a rebranded tablet
-        </h2>
-        <p className="text-center text-foreground-secondary text-[14px] sm:text-[15px] mb-12 sm:mb-20">Built to sit on your counter and run 24/7.</p>
+    <Section id="specs" maxWidth="3xl">
+      <SectionHeader
+        label="Hardware"
+        heading="Real hardware, not a rebranded tablet"
+        subtitle="Built to sit on your counter and run 24/7."
+      />
 
-        <div className="rounded-2xl border border-border overflow-hidden">
-          {specs.map((s, i) => (
-            <div key={s.l} className={`flex justify-between items-center px-4 sm:px-6 py-3.5 sm:py-4 gap-4 ${i < specs.length - 1 ? "border-b border-border" : ""}`}>
-              <span className="text-[13px] text-foreground-tertiary font-light shrink-0">{s.l}</span>
-              <span className="text-[12px] sm:text-[13px] font-mono text-right">{s.v}</span>
-            </div>
-          ))}
-        </div>
+      <BorderedContainer>
+        {specs.map((s, i) => (
+          <div key={s.l} className={`flex justify-between items-center px-4 sm:px-6 py-3.5 sm:py-4 gap-4 ${i < specs.length - 1 ? "border-b border-border" : ""}`}>
+            <span className="text-[13px] text-foreground-tertiary font-light shrink-0">{s.l}</span>
+            <span className="text-[12px] sm:text-[13px] font-mono text-right">{s.v}</span>
+          </div>
+        ))}
+      </BorderedContainer>
 
-        <p className="text-center label text-foreground-muted mt-8">
-          Final specifications may vary
-        </p>
-      </div>
-    </section>
+      <p className="text-center label text-foreground-muted mt-8">
+        Final specifications may vary
+      </p>
+    </Section>
   );
 }
