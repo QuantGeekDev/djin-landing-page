@@ -1,17 +1,28 @@
 # Design System
 
-This document defines the design tokens, typography, components, and guidelines used across the Jinn site. All values are defined in `app/globals.css` and consumed via Tailwind CSS v4's `@theme inline` system.
+This document defines the design tokens, typography, components, and guidelines used across the Jinn site.
 
 ## Architecture
 
 ```
 :root (CSS custom properties)
   --> @theme inline (maps to Tailwind utilities)
-        --> @layer components (reusable multi-property classes)
-              --> Component files (consume via class names)
+        --> @utility / @layer components (reusable CSS classes)
+              --> UI primitives (app/components/ui/)
+                    --> Section components (app/components/)
 ```
 
-Changing a token in `:root` updates every component that uses it. No per-file edits needed.
+**Tokens** live in `app/globals.css` as CSS custom properties, mapped to Tailwind utilities via `@theme inline`. **UI primitives** (`Section`, `SectionHeader`, `Button`, `CardGrid`, `BorderedContainer`, `Accordion`) enforce these tokens and eliminate class duplication. **Section components** compose the primitives into page sections.
+
+Changing a token in `:root` propagates through every component automatically. Adding a new section means importing primitives, not copy-pasting class strings.
+
+### Key Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| `clsx` + `tailwind-merge` | Class merging via `cn()` utility (`app/lib/cn.ts`) |
+| `class-variance-authority` | Component variant API (shadcn standard) |
+| `@base-ui/react` | Accessible accordion primitive (used by shadcn) |
 
 ---
 
@@ -177,50 +188,77 @@ A subtle horizontal rule. Use with max-width for centered dividers:
 
 ## Layout Patterns
 
+These patterns are now encapsulated in UI primitives. Use the components instead of raw classes.
+
 ### Section Spacing
 
-Every major section follows this pattern:
-```html
+Use `<Section>` instead of manual padding + max-width:
+```tsx
+// Before (don't do this):
 <section class="py-20 sm:py-32 md:py-40 px-5 sm:px-6">
-  <div class="max-w-5xl mx-auto">
-    <!-- content -->
-  </div>
+  <div class="max-w-5xl mx-auto">...</div>
 </section>
+
+// After:
+<Section id="features" maxWidth="5xl">...</Section>
 ```
 
-Common max-widths: `max-w-5xl` (default), `max-w-4xl` (comparison, pricing), `max-w-3xl` (specs, kickstarter), `max-w-2xl` (FAQ).
+The underlying `.section-padding` class applies `py-20 sm:py-32 md:py-40 px-5 sm:px-6`. Override via `className` for exceptions.
 
-### Section Header Pattern
+Common max-widths: `"5xl"` (default), `"4xl"` (comparison, pricing), `"3xl"` (specs, kickstarter), `"2xl"` (FAQ).
 
-Every section starts with a label + heading, optionally followed by a subtitle:
-```html
-<div class="label text-foreground-tertiary text-center mb-4 sm:mb-6">Section label</div>
-<h2 class="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-4 sm:mb-6">
-  Section heading
-</h2>
-<p class="text-center text-foreground-secondary text-[14px] sm:text-[15px] mb-12 sm:mb-20">
-  Optional subtitle or description.
-</p>
+### Section Header
+
+Use `<SectionHeader>` instead of manual label + heading + subtitle:
+```tsx
+// Before (don't do this):
+<div class="label text-foreground-tertiary text-center mb-4 sm:mb-6">Label</div>
+<h2 class="heading-lg text-2xl sm:text-3xl md:text-4xl text-center mb-12 sm:mb-20">Heading</h2>
+
+// After:
+<SectionHeader label="Label" heading="Heading" subtitle="Optional subtitle." />
 ```
 
 ### Grid Card Pattern
 
-Features, testimonials, and use cases use a gap-px grid with border wrapper:
-```html
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
-  <div class="bg-background p-5 sm:p-6 md:p-8">
-    <!-- card content -->
-  </div>
+Use `<CardGrid>` + `<CardGridItem>` instead of manual grid + gap-px trick:
+```tsx
+// Before (don't do this):
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-px bg-border rounded-2xl overflow-hidden border border-border">
+  <div class="bg-background p-5 sm:p-6 md:p-8">...</div>
 </div>
+
+// After:
+<CardGrid columns={4}>
+  <CardGridItem className="group">...</CardGridItem>
+</CardGrid>
 ```
 
-The `gap-px bg-border` trick creates 1px dividers between cards without extra markup.
+### Bordered Container Pattern
 
-### Batch / Pricing Card Pattern
+Use `<BorderedContainer>` for bordered wrappers with optional row dividers:
+```tsx
+<BorderedContainer divided>
+  <div className="bg-surface">Row with 1px divider</div>
+</BorderedContainer>
+```
 
-Cards with conditional styling based on state:
-```html
-<div class={`rounded-xl border p-5 ${
+### CTA Buttons
+
+Use `<Button>` / `<ButtonLink>` instead of manual button classes:
+```tsx
+// Before (don't do this):
+<a class="px-8 py-3.5 rounded-full bg-foreground text-background font-medium text-[15px] hover:bg-accent-warm hover:text-white transition-all duration-200">
+
+// After:
+<ButtonLink href="#pricing" variant="primary" shape="pill">Pre-Order</ButtonLink>
+```
+
+### Highlight Cards
+
+Cards with conditional highlight styling (pricing, batch tracker):
+```tsx
+<div className={`rounded-card border p-5 ${
   isActive ? "border-accent-warm/30 bg-accent-warm/[0.03]" : "border-border"
 }`}>
 ```
